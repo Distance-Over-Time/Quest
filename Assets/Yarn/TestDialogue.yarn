@@ -20,7 +20,7 @@ tags:
 <<declare $midItem2 = 0>>
 <<declare $midItem3 = 0>>
 
-Ryan: quick test
+<<declare $finalItem = false>>
 
-<<set $matItem0 = $matItem0 + 1>>
+Ryan: quick test
 ===

@@ -11,12 +11,13 @@ public class CraftingSolutions : MonoBehaviour
 
     void Awake() {
         recipes = new Dictionary<string, string[]>() {
-            {"solution0", new string[] {"0", "1", "2", "3"} },
-            {"solution1", new string[] {"4", "5", "6", "7"} },
-            {"solution2", new string[] {"2", "4", "6", "6"} },
-            {"solution3", new string[] {"1", "3", "3", "7"} },
-            {"solution4", new string[] {"3", "3", "3", "3"} } // This would be the final recipe to complete the game
+            {"$midItem0", new string[] {"0", "1", "2", "3"} },
+            {"$midItem1", new string[] {"4", "5", "6", "7"} },
+            {"$midItem2", new string[] {"2", "4", "6", "5"} },
+            {"$midItem3", new string[] {"1", "3", "3", "7"} },
+            {"finalSolution", new string[] {"8", "9", "10", "11"} } // This would be the final recipe to complete the game
         };
+        Debug.Log(recipes);
     }
 
     public Dictionary<string, string[]> GetRecipes() {

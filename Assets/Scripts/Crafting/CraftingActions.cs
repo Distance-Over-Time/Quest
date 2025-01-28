@@ -13,9 +13,9 @@ public class CraftingActions : MonoBehaviour
     [SerializeField] private string[] pot;
     [SerializeField] private string[] yarnPot;
     [SerializeField] private int potFillCount = 0;
-    private CraftingSolutions solutions;
+    [SerializeField] private GameObject potRow;
+    [SerializeField] private CraftingSolutions solutions;
     private GameObject selectedMat;
-    // private Button selectedButton;
     [SerializeField] private CraftingMenu menuStatus;
 
     void Awake() {
@@ -49,18 +49,20 @@ public class CraftingActions : MonoBehaviour
 
     public void DecrementFloatVariable(string variableName) {
         if (variableStorage.TryGetValue(variableName, out float floatVariable)) {
+            if (floatVariable < 1) {
+                // Not enough material
+                // Play error noise here?
+                return;
+            }
             floatVariable -= 1;
             variableStorage.SetValue(variableName, floatVariable);
-            if (floatVariable < 0) {
-                variableStorage.SetValue(variableName, floatVariable = 0);
-            }
         }
         else {
             Debug.LogWarning(variableName + " does not exist in variable storage -- check Yarn node for declaration");
         }
     }
 
-    public void GainKeyItem(string variableName) {
+    public void GainFinalItem(string variableName) {
         if (variableStorage.TryGetValue(variableName, out bool boolVariable)) {
             variableStorage.SetValue(variableName, boolVariable = true);
         }
@@ -83,13 +85,17 @@ public class CraftingActions : MonoBehaviour
         for (int i = 0; i < potSize; i++) {
             if (pot[i] == null) {
                 // change image
+                Sprite selectedSprite = selectedMat.GetComponent<Image>().sprite;
+                potRow.transform.GetChild(i).gameObject.GetComponent<Image>().sprite = selectedSprite;
 
                 // The name of the in-game material (i.e. 'carrot')
                 pot[i] = selectedMat.GetComponent<MaterialValue>().GetMatName();
 
                 // The name of the GameObject that corresponds to a Yarn variable (i.e. '$matItem0')
                 yarnPot[i] = selectedMat.name;
+
                 Debug.Log("added " + selectedMat.name); // TODO: remove
+
                 potFillCount++;
                 return;
             }
@@ -105,12 +111,12 @@ public class CraftingActions : MonoBehaviour
 
         // We can just sort instead of generating permutations
         Array.Sort(pot);
-
+        
         foreach (KeyValuePair<string, string[]> kvp in solutions.GetRecipes()) {
             Array.Sort(kvp.Value); // or just sort this in CraftingSolutions.cs
             for (int i = 0; i < kvp.Value.Length; i++) {
                 if (EqualityComparer<string>.Default.Equals(pot[i], kvp.Value[i])) {
-                    CraftingSuccess();
+                    CraftingSuccess(kvp.Key);
                     return;
                 }
             }
@@ -119,8 +125,9 @@ public class CraftingActions : MonoBehaviour
         CraftingFailure();
     }
 
-    private void CraftingSuccess() {
+    private void CraftingSuccess(string midName) {
         SubtractMaterialsForCrafting();
+        IncrementFloatVariable(midName);
         ClearPots();
     }
 
@@ -141,5 +148,10 @@ public class CraftingActions : MonoBehaviour
     public void ClearPots() {
         Array.Clear(pot, 0, potSize);
         Array.Clear(yarnPot, 0, potSize);
+
+        // Clear images for pot row
+        for (int i = 0; i < potSize; i++) {
+            potRow.transform.GetChild(i).gameObject.GetComponent<Image>().sprite = null;
+        }
     }
 }
