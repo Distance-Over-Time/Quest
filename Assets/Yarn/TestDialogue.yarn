@@ -20,10 +20,7 @@ tags:
 <<declare $midItem2 = 0>>
 <<declare $midItem3 = 0>>
 
-Ryan: I am testing the dialogue
-Ryan: And honestly, that's really great
-Sophie: 1's in the chat
-Sai: 1111111
+Ryan: quick test
 
 <<set $matItem0 = $matItem0 + 1>>
 ===

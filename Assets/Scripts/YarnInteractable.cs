@@ -42,7 +42,6 @@ public class YarnInteractable : MonoBehaviour {
         //     lightIndicatorObject.intensity = defaultIndicatorIntensity;
         // }
         dialogueRunner.StartDialogue(conversationStartNode);
-        
     }
 
     private void EndConversation() {
