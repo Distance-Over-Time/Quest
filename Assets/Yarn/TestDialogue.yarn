@@ -1,11 +1,6 @@
 ﻿title: Start
 tags:
 ---
-<<declare $keyItemA = false>>
-<<declare $keyItemB = false>>
-<<declare $keyItemC = false>>
-<<declare $keyItemD = false>>
-
 <<declare $matItem0 = 0>>
 <<declare $matItem1 = 0>>
 <<declare $matItem2 = 0>>
@@ -20,10 +15,7 @@ tags:
 <<declare $midItem2 = 0>>
 <<declare $midItem3 = 0>>
 
-Ryan: I am testing the dialogue
-Ryan: And honestly, that's really great
-Sophie: 1's in the chat
-Sai: 1111111
+<<declare $finalItem = false>>
 
-<<set $matItem0 = $matItem0 + 1>>
+Ryan: quick test
 ===

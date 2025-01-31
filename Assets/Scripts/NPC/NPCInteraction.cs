@@ -2,32 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class NPCInteraction : MonoBehaviour
 {
-    public GameObject interactIcon;
+    public SpriteRenderer interactIcon;
     private bool isIconShowing;
     private PlayerInput npcAction;
-
-    void Awake() {
-        interactIcon.SetActive(false);
-        isIconShowing = false;
-    }
 
     void Start()
     {
         npcAction = gameObject.GetComponent<PlayerInput>();
         npcAction.DeactivateInput();
+        HideIcon();
     }
 
     public void ShowIcon() {
-        interactIcon.SetActive(true);
         isIconShowing = true;
+        interactIcon.enabled = isIconShowing;
     }
 
     public void HideIcon() {
-        interactIcon.SetActive(false);
         isIconShowing = false;
+        interactIcon.enabled = isIconShowing;
     }
         
     public void PlayerInRange() {

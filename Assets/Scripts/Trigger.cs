@@ -7,10 +7,14 @@ public class Trigger : MonoBehaviour
     [SerializeField] UnityEvent onTriggerExit;
 
     void OnTriggerEnter(Collider other) {
-        onTriggerEnter.Invoke();
+        if (other.gameObject.tag == "Player") {
+            onTriggerEnter.Invoke();
+        } 
     }
 
     void OnTriggerExit(Collider other) {
-        onTriggerExit.Invoke();
+        if (other.gameObject.tag == "Player") {
+            onTriggerExit.Invoke();
+        }
     }
 }
