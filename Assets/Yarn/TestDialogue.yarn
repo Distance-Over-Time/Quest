@@ -1,11 +1,6 @@
 ﻿title: Start
 tags:
 ---
-<<declare $keyItemA = false>>
-<<declare $keyItemB = false>>
-<<declare $keyItemC = false>>
-<<declare $keyItemD = false>>
-
 <<declare $matItem0 = 0>>
 <<declare $matItem1 = 0>>
 <<declare $matItem2 = 0>>

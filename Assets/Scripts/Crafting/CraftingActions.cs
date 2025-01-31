@@ -37,6 +37,10 @@ public class CraftingActions : MonoBehaviour
         }
     }
 
+    public VariableStorageBehaviour GetYarnVarStorage() {
+        return variableStorage;
+    }
+
     public void IncrementFloatVariable(string variableName) {
         if (variableStorage.TryGetValue(variableName, out float floatVariable)) {
             floatVariable += 1;
