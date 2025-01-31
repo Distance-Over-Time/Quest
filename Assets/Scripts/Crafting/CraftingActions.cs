@@ -6,72 +6,26 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Yarn.Unity;
 
-public class CraftingActions : MonoBehaviour
+public class CraftingActions : YarnStorageConnection
 {
-    private VariableStorageBehaviour variableStorage;
     [SerializeField] private int potSize = 4;
     [SerializeField] private string[] pot;
-    [SerializeField] private string[] yarnPot;
     [SerializeField] private int potFillCount = 0;
     [SerializeField] private GameObject potRow;
     [SerializeField] private CraftingSolutions solutions;
     private GameObject selectedMat;
     [SerializeField] private CraftingMenu menuStatus;
+    [SerializeField] private GameObject[] materialObjs;
 
-    void Awake() {
+    void Start() {
         pot = new string[potSize];
-        yarnPot = new string[potSize];
-
-        variableStorage = GameObject.FindObjectOfType<InMemoryVariableStorage>();
-        if (variableStorage == null)
-        {
-            Debug.LogError("No InMemoryVariableStorage found");
-            return;
-        }
+        materialObjs = new GameObject[potSize];
     }
 
     // Using this to find the currently selected material item in the crafting UI
     void FixedUpdate() {
         if (menuStatus.GetActiveStatus()) {
             selectedMat = EventSystem.current.currentSelectedGameObject;
-        }
-    }
-
-    public VariableStorageBehaviour GetYarnVarStorage() {
-        return variableStorage;
-    }
-
-    public void IncrementFloatVariable(string variableName) {
-        if (variableStorage.TryGetValue(variableName, out float floatVariable)) {
-            floatVariable += 1;
-            variableStorage.SetValue(variableName, floatVariable);
-        }
-        else {
-            Debug.LogWarning(variableName + " does not exist in variable storage -- check Yarn node for declaration");
-        }
-    }
-
-    public void DecrementFloatVariable(string variableName) {
-        if (variableStorage.TryGetValue(variableName, out float floatVariable)) {
-            if (floatVariable < 1) {
-                // Not enough material
-                // Play error noise here?
-                return;
-            }
-            floatVariable -= 1;
-            variableStorage.SetValue(variableName, floatVariable);
-        }
-        else {
-            Debug.LogWarning(variableName + " does not exist in variable storage -- check Yarn node for declaration");
-        }
-    }
-
-    public void GainFinalItem(string variableName) {
-        if (variableStorage.TryGetValue(variableName, out bool boolVariable)) {
-            variableStorage.SetValue(variableName, boolVariable = true);
-        }
-        else {
-            Debug.LogWarning(variableName + " does not exist in variable storage -- check Yarn node for declaration");
         }
     }
 
@@ -86,6 +40,12 @@ public class CraftingActions : MonoBehaviour
             Debug.Log("pot too full");  // TODO: remove
             return;
         }
+        if (GetFloatVariable(selectedMat.name) <= 0) {
+            // maybe play a rejected noise here?
+            Debug.Log("can't add -- not enough of " + selectedMat.name);
+            return;
+        }
+
         for (int i = 0; i < potSize; i++) {
             if (pot[i] == null) {
                 // change image
@@ -95,15 +55,27 @@ public class CraftingActions : MonoBehaviour
                 // The name of the in-game material (i.e. 'carrot')
                 pot[i] = selectedMat.GetComponent<MaterialValue>().GetMatName();
 
-                // The name of the GameObject that corresponds to a Yarn variable (i.e. '$matItem0')
-                yarnPot[i] = selectedMat.name;
+                materialObjs[i] = selectedMat;
 
                 Debug.Log("added " + selectedMat.name); // TODO: remove
 
+                // Hold onto quanity in current state incase of failure/cancel, run only as necessary
+                MaterialValue matValue = GetMaterialValue(selectedMat);
+                Debug.Log(matValue);
+                if (!matValue.GetQuantitySetStatus()) {
+                    matValue.SetOrigQuantity();
+                    matValue.SetOrigStatus(true);
+                }
+
                 potFillCount++;
+                DecrementFloatVariable(materialObjs[i].name);
                 return;
             }
         }
+    }
+
+    private MaterialValue GetMaterialValue(GameObject obj) {
+        return obj.GetComponent<MaterialValue>();
     }
 
     public void Craft() {
@@ -114,23 +86,30 @@ public class CraftingActions : MonoBehaviour
         }
 
         // We can just sort instead of generating permutations
-        Array.Sort(pot);
+        string[] sortedPot = (string[])pot.Clone();
+        Array.Sort(sortedPot);
         
         foreach (KeyValuePair<string, string[]> kvp in solutions.GetRecipes()) {
-            Array.Sort(kvp.Value); // or just sort this in CraftingSolutions.cs
-            for (int i = 0; i < kvp.Value.Length; i++) {
-                if (EqualityComparer<string>.Default.Equals(pot[i], kvp.Value[i])) {
-                    CraftingSuccess(kvp.Key);
-                    return;
-                }
+            string[] sortedKvp = (string[])kvp.Value.Clone();
+            Array.Sort(sortedKvp); // or just sort this in CraftingSolutions.cs
+            if (sortedKvp.SequenceEqual(sortedPot)) {
+                CraftingSuccess(kvp.Key);
+                return;
             }
         }
         Debug.Log("no match");
         CraftingFailure();
     }
 
+    // private void ResetQuantityToPrevState() {
+    //     for (int i = 0; i < potSize; i++) {
+    //         MaterialValue matValue = GetMaterialValue(yarnPot[i]);
+    //         variableStorage.SetValue(yarnPot[i], yarnPot[i].GetOrigQuantity());
+    //     }
+    // }
+
     private void CraftingSuccess(string midName) {
-        SubtractMaterialsForCrafting();
+        // SubtractMaterialsForCrafting();
         IncrementFloatVariable(midName);
         ClearPots();
     }
@@ -138,24 +117,34 @@ public class CraftingActions : MonoBehaviour
     private void CraftingFailure() {
         // some kind of failure notifcation
         Debug.Log("crafting failed -- not a valid solution"); // TODO: remove
-        ClearPots();
+        // ResetQuantityToPrevState();
+        ClearPots(true);
     }
 
     // This function handles variables stored in Yarn
-    private void SubtractMaterialsForCrafting() {
-        for (int i = 0; i < potSize; i++) {
-            DecrementFloatVariable(yarnPot[i]);
-            Debug.Log("Subtracted 1 from " + yarnPot[i] + ", aka " + pot[i]); // TODO: remove
-        }
-    }
+    // private void SubtractMaterialsForCrafting() {
+    //     for (int i = 0; i < potSize; i++) {
+    //         DecrementFloatVariable(yarnPot[i]);
+    //         Debug.Log("Subtracted 1 from " + yarnPot[i] + ", aka " + pot[i]); // TODO: remove
+    //     }
+    // }
 
-    public void ClearPots() {
+    public void ClearPots(bool failure = false) {
+        for (int i = 0; i < potSize; i++) {
+            // Clear images for pot row
+            GameObject currPotItem = potRow.transform.GetChild(i).gameObject; 
+            currPotItem.GetComponent<Image>().sprite = null;
+
+            // Reset all pot items to their previous state
+            MaterialValue matValue = GetMaterialValue(materialObjs[i]);
+            matValue.SetOrigStatus(false);
+            if (failure) {
+                variableStorage.SetValue(materialObjs[i].name, matValue.GetOrigQuantity());
+            }
+        }
+
         Array.Clear(pot, 0, potSize);
-        Array.Clear(yarnPot, 0, potSize);
-
-        // Clear images for pot row
-        for (int i = 0; i < potSize; i++) {
-            potRow.transform.GetChild(i).gameObject.GetComponent<Image>().sprite = null;
-        }
+        Array.Clear(materialObjs, 0, potSize);
+        potFillCount = 0;
     }
 }

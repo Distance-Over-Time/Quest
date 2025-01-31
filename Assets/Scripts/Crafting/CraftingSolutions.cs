@@ -17,7 +17,6 @@ public class CraftingSolutions : MonoBehaviour
             {"$midItem3", new string[] {"1", "3", "3", "7"} },
             {"finalSolution", new string[] {"8", "9", "10", "11"} } // This would be the final recipe to complete the game
         };
-        Debug.Log(recipes);
     }
 
     public Dictionary<string, string[]> GetRecipes() {
