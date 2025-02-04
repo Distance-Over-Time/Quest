@@ -13,9 +13,10 @@ public class CraftingActions : YarnStorageConnection
     [SerializeField] private int potFillCount = 0;
     [SerializeField] private GameObject potRow;
     [SerializeField] private CraftingSolutions solutions;
-    private GameObject selectedMat;
     [SerializeField] private CraftingMenu menuStatus;
     [SerializeField] private GameObject[] materialObjs;
+
+    private GameObject selectedMat;
 
     void Start() {
         pot = new string[potSize];
@@ -101,13 +102,6 @@ public class CraftingActions : YarnStorageConnection
         CraftingFailure();
     }
 
-    // private void ResetQuantityToPrevState() {
-    //     for (int i = 0; i < potSize; i++) {
-    //         MaterialValue matValue = GetMaterialValue(yarnPot[i]);
-    //         variableStorage.SetValue(yarnPot[i], yarnPot[i].GetOrigQuantity());
-    //     }
-    // }
-
     private void CraftingSuccess(string midName) {
         // SubtractMaterialsForCrafting();
         IncrementFloatVariable(midName);
@@ -120,14 +114,6 @@ public class CraftingActions : YarnStorageConnection
         // ResetQuantityToPrevState();
         ClearPots(true);
     }
-
-    // This function handles variables stored in Yarn
-    // private void SubtractMaterialsForCrafting() {
-    //     for (int i = 0; i < potSize; i++) {
-    //         DecrementFloatVariable(yarnPot[i]);
-    //         Debug.Log("Subtracted 1 from " + yarnPot[i] + ", aka " + pot[i]); // TODO: remove
-    //     }
-    // }
 
     public void ClearPots(bool failure = false) {
         for (int i = 0; i < potSize; i++) {

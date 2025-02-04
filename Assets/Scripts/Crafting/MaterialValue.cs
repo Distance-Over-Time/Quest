@@ -13,7 +13,6 @@ public class MaterialValue : YarnStorageConnection, ISelectHandler
 
     void OnEnable() {
         variableStorage = GameObject.FindObjectOfType<InMemoryVariableStorage>();
-        // yarnConnection = GameObject.FindObjectOfType<YarnStorageConnection>();
         origQuantitySet = false;
     }
 
@@ -37,7 +36,6 @@ public class MaterialValue : YarnStorageConnection, ISelectHandler
     }
 
     public void SetOrigQuantity() {
-        // origQuantity = yarnConnection.GetFloatVariable(gameObject.name);
         origQuantity = GetFloatVariable(gameObject.name);
     }
 
