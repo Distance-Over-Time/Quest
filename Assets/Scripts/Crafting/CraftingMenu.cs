@@ -8,7 +8,7 @@ public class CraftingMenu : MonoBehaviour
     private bool isOn;
     [SerializeField] private PlayerInput playerControls;
 
-    void Awake() {
+    void Start() {
         isOn = false;
         gameObject.SetActive(isOn);
     }

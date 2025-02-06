@@ -6,12 +6,13 @@ using Yarn.Unity;
 public class MaterialValue : YarnStorageConnection, ISelectHandler
 {
     public TMP_Text textDisplay;
-    // private YarnStorageConnection yarnConnection;
     [SerializeField] private string matName;
     [SerializeField] private float origQuantity;
     [SerializeField] private bool origQuantitySet;
+    private bool inInventory;
 
     void OnEnable() {
+        // For actual crafting
         variableStorage = GameObject.FindObjectOfType<InMemoryVariableStorage>();
         origQuantitySet = false;
     }
@@ -20,7 +21,11 @@ public class MaterialValue : YarnStorageConnection, ISelectHandler
 
     void Update() {
         variableStorage.TryGetValue(gameObject.name, out float floatVariable);
+        // For updating the quantity of this item
         UpdateQuantityText(floatVariable);
+        // Checking to see if the player actually has this item
+        // For lighting up key item images in recipe list
+        UpdateInInventoryStatus(floatVariable);
     }
     
     public string GetMatName() {
@@ -45,5 +50,18 @@ public class MaterialValue : YarnStorageConnection, ISelectHandler
 
     public bool GetQuantitySetStatus() {
         return origQuantitySet;
+    }
+
+    public bool IsMatInInventory() {
+        return inInventory;
+    }
+    
+    private void UpdateInInventoryStatus(float quantity) {
+        if (quantity > 0) {
+            inInventory = true;
+        }
+        else {
+            inInventory = false;
+        }
     }
 }

@@ -7,7 +7,8 @@ public class ItemCollection : YarnStorageConnection
 {
     // This name needs to match the '$matItem[N]'
     // ex. $matItem0
-    public string itemType;
+    public string itemYarnName;
+    public string itemDiscoverBoolName;
     
     private SpriteRenderer itemSprite;
     [SerializeField] private SpriteRenderer playerItemIndicator;
@@ -19,7 +20,8 @@ public class ItemCollection : YarnStorageConnection
 
     public void CollectItem() {
         CollectItemPopup();
-        IncrementFloatVariable(itemType);
+        IncrementFloatVariable(itemYarnName); // Increase quantity in crafting menu
+        ChangeDiscoveredBool(itemDiscoverBoolName);
         // Destroy(gameObject);
     }
     
