@@ -1,0 +1,17 @@
+﻿title: Curly
+tags:
+---
+
+<<if $firstTalkWithCurly is true>>
+    <<declare $curlyItem = false>>
+    <<set $firstTalkWithCurly = false>>
+<<endif>>
+
+
+<<if $foundKeyItem0 == true>>
+    Curly: wow you actually did it
+<<else>>
+    Curly: god you lazy fuck, please make it already
+<<endif>>
+
+===

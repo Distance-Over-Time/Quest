@@ -20,6 +20,8 @@ tags:
 <<declare $foundMatItem6 = false>>
 <<declare $foundMatItem7 = false>>
 
+
+// These are the crafted recipes
 <<declare $foundKeyItem0 = false>>
 <<declare $foundKeyItem1 = false>>
 <<declare $foundKeyItem2 = false>>
@@ -29,4 +31,9 @@ tags:
 <<declare $finalItem = false>>
 
 Ryan: quick test
+-> Ryan: But did this work?
+    Ryan: I gues it did
+-> Ryan: I really want this to work
+    Ryan: oh boy
+
 ===

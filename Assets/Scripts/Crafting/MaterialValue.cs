@@ -11,6 +11,8 @@ public class MaterialValue : YarnStorageConnection, ISelectHandler
     [SerializeField] private bool origQuantitySet;
     private bool inInventory;
 
+    public string matSoundName;
+
     void OnEnable() {
         // For actual crafting
         variableStorage = GameObject.FindObjectOfType<InMemoryVariableStorage>();
@@ -63,5 +65,9 @@ public class MaterialValue : YarnStorageConnection, ISelectHandler
         else {
             inInventory = false;
         }
+    }
+
+    private void PlayIngredientSound() {
+        // playSoundFromFMOD(matSoundName);
     }
 }

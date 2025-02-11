@@ -49,6 +49,7 @@ public class CraftingActions : YarnStorageConnection
         if (GetFloatVariable(selectedMat.name) <= 0) {
             // maybe play a rejected noise here?
             Debug.Log("can't add -- not enough of " + selectedMat.name);
+            ClearCraftingPot();
             return;
         }
 
@@ -78,7 +79,6 @@ public class CraftingActions : YarnStorageConnection
     }
 
     private MaterialValue GetMaterialValue(GameObject obj) {
-        //if (obj.GetComponent<MaterialValue>()) {
             return obj.GetComponent<MaterialValue>();
     }
 
@@ -102,20 +102,21 @@ public class CraftingActions : YarnStorageConnection
     private void CraftingSuccess(string recipeName) {
         // IncrementFloatVariable(recipeName);
         GameObject.Find(recipeName).transform.GetChild(1).GetComponent<KeyItemReaction>().SetCraftedStatus(true);
-        ClearPots();
+        ClearAllPots();
     }
 
     private void CraftingFailure() {
         // TODO: some kind of failure notifcation
 
         // ResetQuantityToPrevState();
-        ClearPots(true);
+        ClearAllPots(true);
     }
 
-    public void ClearPots(bool failure = false) {
+    public void ClearAllPots(bool failure = false) {
         for (int i = 0; i < potSize; i++) {
             // End if the attempt did not utilize the full pot
             if (!materialObjs[i]) {
+                ClearCraftingPot();
                 return;
             }
 
@@ -131,8 +132,13 @@ public class CraftingActions : YarnStorageConnection
             }
         }
 
-        Array.Fill(pot, emptySlot);
+        ClearCraftingPot();
         Array.Clear(materialObjs, 0, potSize);
         potFillCount = 0;
+    }
+
+    public void ClearCraftingPot() {
+        pot = new string[potSize];
+        Array.Fill(pot, emptySlot);
     }
 }
