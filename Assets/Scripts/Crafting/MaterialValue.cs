@@ -13,6 +13,10 @@ public class MaterialValue : YarnStorageConnection, ISelectHandler
 
     public string matSoundName;
 
+    void Start() {
+        // --- SAI (START)
+    }
+
     void OnEnable() {
         // For actual crafting
         variableStorage = GameObject.FindObjectOfType<InMemoryVariableStorage>();
@@ -68,6 +72,44 @@ public class MaterialValue : YarnStorageConnection, ISelectHandler
     }
 
     private void PlayIngredientSound() {
-        // playSoundFromFMOD(matSoundName);
+        // --- SAI
+        switch (matName) {
+            case "0":
+                // select_water
+
+                break;
+            case "1":
+                // select_chamomile
+
+                break;
+            case "2":
+                // select_oats
+
+                break;
+            case "3":
+                // select_wolfsbane
+
+                break;
+            case "4":
+                // select_honey
+
+                break;
+            case "5":
+                // select_beeswax
+
+                break;
+            case "6":
+                // select_tomato
+
+                break;
+            case "7":
+                // select_lemon
+
+                break;
+            default:
+                Debug.Log("Something went wrong in PlayIngredientSound() (MaterialValue.cs) -- check matName");
+                break;
+        }
+        return;
     }
 }

@@ -8,6 +8,7 @@ using Yarn.Unity;
 public class KeyItemReaction : ItemReaction
 {
     [SerializeField] private Image checkmark;
+    private Image keyImage;
     private string keyItemYarnName;
     private string[] thisKeyRecipe;
     private CraftingSolutions solutions;
@@ -31,6 +32,9 @@ public class KeyItemReaction : ItemReaction
             Debug.Log(keyItemYarnName + " couldn't be matched to recipe dictionary from CraftSolutionManager");
         }
 
+        // Set this image
+        keyImage = GetComponent<Image>();
+
         // Hide checkmark image
         SetCraftedStatus(false);
 
@@ -43,25 +47,26 @@ public class KeyItemReaction : ItemReaction
     }
 
     private bool CheckCanCraft() {
-        Debug.Log(thisKeyRecipe);
+        // Looking into the recipe solution guide
         foreach (string ingredient in thisKeyRecipe) {
             // Stop early if the recipe has less than 4 ingredients
             if (ingredient == noIngredient) {
                 break;
             }
+            // Now comparing with all the available game objects
             foreach (GameObject obj in ingredientObjs) {
-                if ((obj.GetComponent<MaterialValue>().GetMatName() == ingredient) && (GetFloatVariable(obj.name) > 0)) {
-                    // Debug.Log("returned false from CanCheckCraft()");   // TODO: remove
+                if ((obj.GetComponent<MaterialValue>().GetMatName() == ingredient) && (GetFloatVariable(obj.name) <= 0)) {
                     return false;
                 }
             }
         }
-        // Debug.Log("returned true from CanCheckCraft()"); // TODO: remove
+        SetAbleToCraft();
         return true;
-    } 
+    }
 
     private void SetAbleToCraft() {
-        SetColor(true);
+        Debug.Log(gameObject.name + " of " + transform.parent.gameObject.name + " was set able to craft");
+        SetColor(true, keyImage);
     }
 
     public void SetCraftedStatus(bool status) {

@@ -7,9 +7,8 @@ using Yarn.Unity;
 public class ItemReaction : YarnStorageConnection
 {
     [SerializeField] private string discoveryName;
-    // [SerializeField] private Material mat;
-    [SerializeField] private Material grayscaleMat;
-    [SerializeField] private Material defaultMat;
+    [SerializeField] protected Material grayscaleMat;
+    [SerializeField] protected Material defaultMat;
     private Image image;
     private bool found;
 
@@ -20,10 +19,9 @@ public class ItemReaction : YarnStorageConnection
         // The material will set the sprite to grayscale at default
         image = GetComponent<Image>();
         defaultMat = Canvas.GetDefaultCanvasMaterial();
-        SetColor(found);
+        SetColor(found, image);
     }
 
-    // Update is called once per frame
     void OnEnable()
     {
         if (found == false) {
@@ -34,14 +32,14 @@ public class ItemReaction : YarnStorageConnection
     private void CheckIfDiscovered() {
         if (variableStorage.TryGetValue(discoveryName, out bool discovered)) {
             if (discovered) {
-                SetColor(discovered);
+                SetColor(discovered, image);
                 found = true;
             }
         }
     }
 
-    protected void SetColor(bool enable) {
+    protected void SetColor(bool enable, Image thisImage) {
         // True is default, which is color
-        image.material = enable ? defaultMat : grayscaleMat; 
+        thisImage.material = enable ? defaultMat : grayscaleMat; 
     }
 }
