@@ -15,6 +15,7 @@ public class CraftingActions : YarnStorageConnection
     [SerializeField] private CraftingSolutions solutions;
     [SerializeField] private CraftingMenu menuStatus;
     [SerializeField] private GameObject[] materialObjs;
+    [SerializeField] private GameObject craftedPopup;
 
     private GameObject selectedMat;
     private string emptySlot;
@@ -83,13 +84,16 @@ public class CraftingActions : YarnStorageConnection
     }
 
     public void Craft() {
+        // --- SAI
+        
+
         // We can just sort instead of generating permutations
         string[] sortedPot = (string[])pot.Clone();
         Array.Sort(sortedPot);
         
         foreach (KeyValuePair<string, string[]> kvp in solutions.GetRecipes()) {
             string[] sortedKvp = (string[])kvp.Value.Clone();
-            Array.Sort(sortedKvp); // or just sort this in CraftingSolutions.cs
+            Array.Sort(sortedKvp);
             if (sortedKvp.SequenceEqual(sortedPot)) {
                 CraftingSuccess(kvp.Key);
                 return;
@@ -100,15 +104,18 @@ public class CraftingActions : YarnStorageConnection
     }
 
     private void CraftingSuccess(string recipeName) {
-        // IncrementFloatVariable(recipeName);
-        GameObject.Find(recipeName).transform.GetChild(1).GetComponent<KeyItemReaction>().SetCraftedStatus(true);
+        GameObject.Find(recipeName).transform.GetChild(1).GetComponent<KeyItemReaction>().SetCraftedStatus(true); // Haha yikes
+
+        craftedPopup.GetComponent<ItemAcquiredActions>().PlayPopupAnim();
+
         ClearAllPots();
     }
 
     private void CraftingFailure() {
         // TODO: some kind of failure notifcation
 
-        // ResetQuantityToPrevState();
+        // --- SAI
+
         ClearAllPots(true);
     }
 
