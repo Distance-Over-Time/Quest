@@ -7,26 +7,25 @@ public class ItemCollection : YarnStorageConnection
 {
     // This name needs to match the '$matItem[N]'
     // ex. $matItem0
-    public string itemType;
+    public string itemYarnName;
+    public string itemDiscoverBoolName;
     
     private SpriteRenderer itemSprite;
     [SerializeField] private SpriteRenderer playerItemIndicator;
 
-    // Start is called before the first frame update
     void Start() {
         itemSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     public void CollectItem() {
-        CollectItemPopup();
-        IncrementFloatVariable(itemType);
-        // Destroy(gameObject);
+        SetupPopup();
+        IncrementFloatVariable(itemYarnName); // Increase quantity in crafting menu
+        ChangeDiscoveredBool(itemDiscoverBoolName);
+        Destroy(gameObject);
     }
     
-    public void CollectItemPopup() {
-        playerItemIndicator.sprite = itemSprite.sprite;
+    public void SetupPopup() {
         playerItemIndicator.enabled = true;
-        // show item appearing above player head
-        // item blinking?
+        playerItemIndicator.sprite = itemSprite.sprite;
     }
 }

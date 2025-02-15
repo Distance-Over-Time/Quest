@@ -13,12 +13,19 @@ public class CraftingActions : YarnStorageConnection
     [SerializeField] private int potFillCount = 0;
     [SerializeField] private GameObject potRow;
     [SerializeField] private CraftingSolutions solutions;
-    private GameObject selectedMat;
     [SerializeField] private CraftingMenu menuStatus;
     [SerializeField] private GameObject[] materialObjs;
+    [SerializeField] private GameObject craftedPopup;
+
+    private GameObject selectedMat;
+    private string emptySlot;
 
     void Start() {
+        emptySlot = solutions.GetGameNullValue();
+        
         pot = new string[potSize];
+        Array.Fill(pot, emptySlot);
+        
         materialObjs = new GameObject[potSize];
     }
 
@@ -43,11 +50,12 @@ public class CraftingActions : YarnStorageConnection
         if (GetFloatVariable(selectedMat.name) <= 0) {
             // maybe play a rejected noise here?
             Debug.Log("can't add -- not enough of " + selectedMat.name);
+            ClearCraftingPot();
             return;
         }
 
         for (int i = 0; i < potSize; i++) {
-            if (pot[i] == null) {
+            if (pot[i] == emptySlot) {
                 // change image
                 Sprite selectedSprite = selectedMat.GetComponent<Image>().sprite;
                 potRow.transform.GetChild(i).gameObject.GetComponent<Image>().sprite = selectedSprite;
@@ -57,11 +65,8 @@ public class CraftingActions : YarnStorageConnection
 
                 materialObjs[i] = selectedMat;
 
-                Debug.Log("added " + selectedMat.name); // TODO: remove
-
                 // Hold onto quanity in current state incase of failure/cancel, run only as necessary
                 MaterialValue matValue = GetMaterialValue(selectedMat);
-                Debug.Log(matValue);
                 if (!matValue.GetQuantitySetStatus()) {
                     matValue.SetOrigQuantity();
                     matValue.SetOrigStatus(true);
@@ -75,15 +80,12 @@ public class CraftingActions : YarnStorageConnection
     }
 
     private MaterialValue GetMaterialValue(GameObject obj) {
-        return obj.GetComponent<MaterialValue>();
+            return obj.GetComponent<MaterialValue>();
     }
 
     public void Craft() {
-        if (potFillCount != potSize) {
-            // maybe play a rejected noise here?
-            Debug.Log("not enough items in pot");
-            return;
-        }
+        // --- SAI
+        
 
         // We can just sort instead of generating permutations
         string[] sortedPot = (string[])pot.Clone();
@@ -91,7 +93,7 @@ public class CraftingActions : YarnStorageConnection
         
         foreach (KeyValuePair<string, string[]> kvp in solutions.GetRecipes()) {
             string[] sortedKvp = (string[])kvp.Value.Clone();
-            Array.Sort(sortedKvp); // or just sort this in CraftingSolutions.cs
+            Array.Sort(sortedKvp);
             if (sortedKvp.SequenceEqual(sortedPot)) {
                 CraftingSuccess(kvp.Key);
                 return;
@@ -101,37 +103,32 @@ public class CraftingActions : YarnStorageConnection
         CraftingFailure();
     }
 
-    // private void ResetQuantityToPrevState() {
-    //     for (int i = 0; i < potSize; i++) {
-    //         MaterialValue matValue = GetMaterialValue(yarnPot[i]);
-    //         variableStorage.SetValue(yarnPot[i], yarnPot[i].GetOrigQuantity());
-    //     }
-    // }
+    private void CraftingSuccess(string recipeName) {
+        GameObject craftedRecipe = GameObject.Find(recipeName);
+        craftedRecipe.transform.GetChild(1).GetComponent<KeyItemReaction>().SetCraftedStatus(true);
 
-    private void CraftingSuccess(string midName) {
-        // SubtractMaterialsForCrafting();
-        IncrementFloatVariable(midName);
-        ClearPots();
+        craftedPopup.GetComponent<ItemAcquiredActions>().PlayPopupAnim(craftedRecipe);
+
+        ClearAllPots();
     }
 
     private void CraftingFailure() {
-        // some kind of failure notifcation
-        Debug.Log("crafting failed -- not a valid solution"); // TODO: remove
-        // ResetQuantityToPrevState();
-        ClearPots(true);
+        // TODO: some kind of failure notifcation
+
+        // --- SAI
+
+        ClearAllPots(true);
     }
 
-    // This function handles variables stored in Yarn
-    // private void SubtractMaterialsForCrafting() {
-    //     for (int i = 0; i < potSize; i++) {
-    //         DecrementFloatVariable(yarnPot[i]);
-    //         Debug.Log("Subtracted 1 from " + yarnPot[i] + ", aka " + pot[i]); // TODO: remove
-    //     }
-    // }
-
-    public void ClearPots(bool failure = false) {
+    public void ClearAllPots(bool failure = false) {
         for (int i = 0; i < potSize; i++) {
-            // Clear images for pot row
+            // End if the attempt did not utilize the full pot
+            if (!materialObjs[i]) {
+                ClearCraftingPot();
+                return;
+            }
+
+            // Clear image for pot slot
             GameObject currPotItem = potRow.transform.GetChild(i).gameObject; 
             currPotItem.GetComponent<Image>().sprite = null;
 
@@ -143,8 +140,13 @@ public class CraftingActions : YarnStorageConnection
             }
         }
 
-        Array.Clear(pot, 0, potSize);
+        ClearCraftingPot();
         Array.Clear(materialObjs, 0, potSize);
         potFillCount = 0;
+    }
+
+    public void ClearCraftingPot() {
+        pot = new string[potSize];
+        Array.Fill(pot, emptySlot);
     }
 }

@@ -23,7 +23,6 @@ public class YarnStorageConnection : MonoBehaviour
     }
 
     public float GetFloatVariable(string variableName) {
-        Debug.Log(variableStorage + " (from GetFloatVariable)");
         if (variableStorage.TryGetValue(variableName, out float floatVariable)) {
             return floatVariable;
         }
@@ -34,7 +33,6 @@ public class YarnStorageConnection : MonoBehaviour
     }
 
     public void IncrementFloatVariable(string variableName) {
-        Debug.Log(variableStorage + " (from Increment)");
         if (variableStorage.TryGetValue(variableName, out float floatVariable)) {
             floatVariable += 1;
             variableStorage.SetValue(variableName, floatVariable);
@@ -45,7 +43,6 @@ public class YarnStorageConnection : MonoBehaviour
     }
 
     public void DecrementFloatVariable(string variableName) {
-        Debug.Log(variableStorage + " (from Decrement)");
         if (variableStorage.TryGetValue(variableName, out float floatVariable)) {
             if (floatVariable < 1) {
                 // Not enough material
@@ -60,7 +57,7 @@ public class YarnStorageConnection : MonoBehaviour
         }
     }
 
-    public void GainFinalItem(string variableName) {
+    public void ChangeDiscoveredBool(string variableName) {
         if (variableStorage.TryGetValue(variableName, out bool boolVariable)) {
             variableStorage.SetValue(variableName, boolVariable = true);
         }

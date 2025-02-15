@@ -12,11 +12,6 @@ public class PlayerController : MonoBehaviour
         move = context.ReadValue<Vector2>();
     }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         MovePlayer();
