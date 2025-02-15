@@ -32,8 +32,14 @@ tags:
 
 Ryan: quick test
 -> Ryan: But did this work?
-    Ryan: I gues it did
+    Ryan: I guess it did
 -> Ryan: I really want this to work
     Ryan: oh boy
+
+Ryan: Is the popup here?
+<<show_popup tea>>
+Ryan: Oh good, the popup is here
+<<hide_popup>>
+Ryan: Goodbye popup
 
 ===

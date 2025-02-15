@@ -104,9 +104,10 @@ public class CraftingActions : YarnStorageConnection
     }
 
     private void CraftingSuccess(string recipeName) {
-        GameObject.Find(recipeName).transform.GetChild(1).GetComponent<KeyItemReaction>().SetCraftedStatus(true); // Haha yikes
+        GameObject craftedRecipe = GameObject.Find(recipeName);
+        craftedRecipe.transform.GetChild(1).GetComponent<KeyItemReaction>().SetCraftedStatus(true);
 
-        craftedPopup.GetComponent<ItemAcquiredActions>().PlayPopupAnim();
+        craftedPopup.GetComponent<ItemAcquiredActions>().PlayPopupAnim(craftedRecipe);
 
         ClearAllPots();
     }

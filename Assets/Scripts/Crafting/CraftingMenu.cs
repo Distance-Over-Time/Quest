@@ -8,7 +8,7 @@ public class CraftingMenu : MonoBehaviour
 {
     private bool isOn;
     [SerializeField] private PlayerInput playerControls;
-    [SerializeField] private EventSystem optionsEvents;
+    [SerializeField] private GameObject firstMat;
 
     void Start() {
         isOn = false;
@@ -18,8 +18,11 @@ public class CraftingMenu : MonoBehaviour
     public void ActivateCraftWindow() {
         isOn = !isOn;
         gameObject.SetActive(isOn);
-        optionsEvents.enabled = !isOn; // Need this to deal with making the options menu selectable
         ToggleMovementControls(isOn);
+        
+        if (isOn == true) {
+            StartCoroutine(SetFirstButton());
+        }
     }
 
     public bool GetActiveStatus() {
@@ -34,4 +37,11 @@ public class CraftingMenu : MonoBehaviour
             playerControls.ActivateInput();
         }
     }
+
+    IEnumerator SetFirstButton() {
+        // just let a girl load into existence, okay? jesus
+        yield return null;
+        EventSystem.current.SetSelectedGameObject(firstMat);
+    }
+
 }
