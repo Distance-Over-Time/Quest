@@ -1,0 +1,42 @@
+﻿title: Yarn_Elves
+tags:
+---
+// First time talking to Elves
+<<if $elvesFirstChat is true>>
+    <<set $elvesFirstChat to false>>
+
+    // Checking to see if player has already spoken with Pirate
+    <<if $pirateFirstChat is false>>
+        
+        // --- Dialogue for first chat with Elves here (talked to Pirate first)
+
+    <<else>>
+
+        // --- Dialogue for first chat with Elves here (did not talk to Pirate first)
+
+    <<endif>>
+    
+
+// Subsequent chats with Elves, haven't given Porridge yet
+<<elseif $gaveKeyItem2 is false>>
+
+    // --- Any dialogue Elves should say before a check for the Porridge happens
+
+
+    <<if $craftedKeyItem2 is true>>     // Porridge
+        // TODO: check with Shannon what is happening with Elves
+        <<set $matItem7 to 1>>          // Elves gives player 1 Grog (?)
+        <<set $gaveKeyItem2 to true>>   // will no longer repeat themselves
+
+        // --- Dialogue for giving Elves Porridge here
+
+    <<endif>>
+
+// Subsequent chats with Elves here, Porridge given
+<<else>>
+
+    // --- Dialogue for after giving Elves Porridge here
+
+<<endif>>
+
+===

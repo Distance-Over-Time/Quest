@@ -1,0 +1,55 @@
+﻿title: Yarn_Start
+tags:
+---
+// --- VARIABLES ---
+
+// For use by the crafting system:
+// initialized here for quantity of each material,
+// manipulated in C#
+<<declare $matItem0 = 0>>
+<<declare $matItem1 = 0>>
+<<declare $matItem2 = 0>>
+<<declare $matItem3 = 0>>
+<<declare $matItem4 = 0>>
+<<declare $matItem5 = 0>>
+<<declare $matItem6 = 0>>
+<<declare $matItem7 = 0>>
+
+// For use by the crafting system:
+// turns discovered materials from grayscale to color,
+// declared here & manipulated in C#; do not change in Yarn
+<<declare $foundMatItem0 = false>>      // water
+<<declare $foundMatItem1 = false>>      // chamomile
+<<declare $foundMatItem2 = false>>      // oats
+<<declare $foundMatItem3 = false>>      // wolfsbane
+<<declare $foundMatItem4 = false>>      // honey
+<<declare $foundMatItem5 = false>>      // beeswax
+<<declare $foundMatItem6 = false>>      // tomato
+<<declare $foundMatItem7 = false>>      // lemon
+
+
+// These are the crafted recipes to be given to NPCs
+// Manipulated in each character's Yarn file
+<<declare $craftedKeyItem0 = false>>    // tea
+<<declare $craftedKeyItem1 = false>>    // grog
+<<declare $craftedKeyItem2 = false>>    // porridge
+<<declare $craftedKeyItem3 = false>>    // salve
+<<declare $craftedFinalItem = false>>   // witch's potion
+
+<<declare $gaveKeyItem0 = false>>       // tea
+<<declare $gaveKeyItem1 = false>>       // grog
+<<declare $gaveKeyItem2 = false>>       // porridge
+<<declare $gaveKeyItem3 = false>>       // salve
+
+// Determines if the player has already first spoken to a character
+// Manipulated in each character's Yarn file
+<<declare $wolfFirstChat = true>>
+<<declare $pirateFirstChat = true>>
+<<declare $dragonFirstChat = true>>
+<<declare $elvesFirstChat = true>>
+<<declare $portalFirstChat = true>>
+
+// --- Start your dialogue for the beginning of the game below this line ---
+
+
+===

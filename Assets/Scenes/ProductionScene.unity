@@ -222,7 +222,7 @@ PrefabInstance:
     - target: {fileID: 3431847049532903711, guid: 3dba07af5cbbf4c739d2ef4b1bc0b047,
         type: 3}
       propertyPath: conversationStartNode
-      value: Curly
+      value: Yarn_Elves
       objectReference: {fileID: 0}
     - target: {fileID: 3937953350581520633, guid: 3dba07af5cbbf4c739d2ef4b1bc0b047,
         type: 3}
@@ -301,7 +301,7 @@ PrefabInstance:
     - target: {fileID: 3431847049532903711, guid: 3dba07af5cbbf4c739d2ef4b1bc0b047,
         type: 3}
       propertyPath: conversationStartNode
-      value: Curly
+      value: Yarn_Pirate
       objectReference: {fileID: 0}
     - target: {fileID: 3937953350581520633, guid: 3dba07af5cbbf4c739d2ef4b1bc0b047,
         type: 3}
@@ -1054,7 +1054,7 @@ PrefabInstance:
     - target: {fileID: 3431847049532903711, guid: 3dba07af5cbbf4c739d2ef4b1bc0b047,
         type: 3}
       propertyPath: conversationStartNode
-      value: Curly
+      value: Yarn_Wolf
       objectReference: {fileID: 0}
     - target: {fileID: 3937953350581520633, guid: 3dba07af5cbbf4c739d2ef4b1bc0b047,
         type: 3}
@@ -2277,7 +2277,7 @@ PrefabInstance:
     - target: {fileID: 3431847049532903711, guid: 3dba07af5cbbf4c739d2ef4b1bc0b047,
         type: 3}
       propertyPath: conversationStartNode
-      value: Curly
+      value: Yarn_Dragon
       objectReference: {fileID: 0}
     - target: {fileID: 3937953350581520633, guid: 3dba07af5cbbf4c739d2ef4b1bc0b047,
         type: 3}
@@ -3286,7 +3286,7 @@ PrefabInstance:
     - target: {fileID: 3431847049532903711, guid: 3dba07af5cbbf4c739d2ef4b1bc0b047,
         type: 3}
       propertyPath: conversationStartNode
-      value: Curly
+      value: Yarn_Portal
       objectReference: {fileID: 0}
     - target: {fileID: 3937953350581520633, guid: 3dba07af5cbbf4c739d2ef4b1bc0b047,
         type: 3}
@@ -3490,6 +3490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: flavorDesc
       value: spill thy tea
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083534145409163350, guid: 69a165131d15b4a82885da946c5c3f25,
+        type: 3}
+      propertyPath: craftYarnVariableName
+      value: $craftedKeyItem0
       objectReference: {fileID: 0}
     - target: {fileID: 1284693252787134544, guid: 69a165131d15b4a82885da946c5c3f25,
         type: 3}
@@ -4176,6 +4181,11 @@ PrefabInstance:
       propertyPath: flavorDesc
       value: the only song I know how to kareoke is Gangster's Paradise
       objectReference: {fileID: 0}
+    - target: {fileID: 5513853887339181283, guid: 69a165131d15b4a82885da946c5c3f25,
+        type: 3}
+      propertyPath: craftYarnVariableName
+      value: $craftedFinalItem
+      objectReference: {fileID: 0}
     - target: {fileID: 5519169427169890841, guid: 69a165131d15b4a82885da946c5c3f25,
         type: 3}
       propertyPath: m_Layer
@@ -4391,6 +4401,11 @@ PrefabInstance:
       propertyPath: flavorDesc
       value: it's the grog
       objectReference: {fileID: 0}
+    - target: {fileID: 6420868039733783873, guid: 69a165131d15b4a82885da946c5c3f25,
+        type: 3}
+      propertyPath: craftYarnVariableName
+      value: $craftedKeyItem1
+      objectReference: {fileID: 0}
     - target: {fileID: 6581758779846197126, guid: 69a165131d15b4a82885da946c5c3f25,
         type: 3}
       propertyPath: m_Layer
@@ -4515,6 +4530,11 @@ PrefabInstance:
         type: 3}
       propertyPath: flavorDesc
       value: I'M IN PAIN
+      objectReference: {fileID: 0}
+    - target: {fileID: 7133950362308623343, guid: 69a165131d15b4a82885da946c5c3f25,
+        type: 3}
+      propertyPath: craftYarnVariableName
+      value: $craftedKeyItem3
       objectReference: {fileID: 0}
     - target: {fileID: 7163752811227280206, guid: 69a165131d15b4a82885da946c5c3f25,
         type: 3}
@@ -4775,6 +4795,11 @@ PrefabInstance:
         type: 3}
       propertyPath: flavorDesc
       value: baby bear had the worst porridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657577944746852706, guid: 69a165131d15b4a82885da946c5c3f25,
+        type: 3}
+      propertyPath: craftYarnVariableName
+      value: $craftedKeyItem2
       objectReference: {fileID: 0}
     - target: {fileID: 8662892664184563608, guid: 69a165131d15b4a82885da946c5c3f25,
         type: 3}
@@ -5094,6 +5119,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialogue System
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139397536736941756, guid: ba94d0c6e8dcf401c960ee8db59ecae2,
+        type: 3}
+      propertyPath: startNode
+      value: Yarn_Start
       objectReference: {fileID: 0}
     - target: {fileID: 3302002904268187093, guid: ba94d0c6e8dcf401c960ee8db59ecae2,
         type: 3}

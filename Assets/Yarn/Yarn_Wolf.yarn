@@ -1,0 +1,32 @@
+﻿title: Yarn_Wolf
+tags:
+---
+// First time talking to Wolf
+<<if $wolfFirstChat is true>>
+    <<set $wolfFirstChat to false>>
+
+    // --- Dialogue for first chat with Wolf here
+    
+
+// Subsequent chats with Wolf, haven't given salve yet
+<<elseif $gaveKeyItem3 is false>>
+
+    // --- Any dialogue Wolf should say before a check for the Salve happens
+
+
+    <<if $craftedKeyItem3 is true>>     // Salve
+        <<set $matItem6 to 1>>          // Wolf gives player 1 tomato
+        <<set $gaveKeyItem3 to true>>   // will no longer repeat themselves
+
+        // --- Dialogue for giving Wolf salve here
+
+    <<endif>>
+
+// Subsequent chats with Wolf here, salve given
+<<else>>
+
+    // --- Dialogue for after giving Wolf Salve here
+
+<<endif>>
+
+===
