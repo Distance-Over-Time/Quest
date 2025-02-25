@@ -37,7 +37,6 @@ public class KeyItemReaction : ItemReaction
 
         // Hide checkmark image
         SetCraftedStatus(false);
-
     }
 
     void OnEnable() {
@@ -65,7 +64,6 @@ public class KeyItemReaction : ItemReaction
     }
 
     private void SetAbleToCraft() {
-        Debug.Log(gameObject.name + " of " + transform.parent.gameObject.name + " was set able to craft");
         SetColor(true, keyImage);
     }
 
