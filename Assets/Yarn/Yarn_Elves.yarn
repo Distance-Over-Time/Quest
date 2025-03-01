@@ -24,7 +24,6 @@ tags:
 
 
     <<if $craftedKeyItem2 is true>>     // Porridge
-        // TODO: check with Shannon what is happening with Elves
         <<set $matItem7 to 1>>          // Elves gives player 1 Grog (?)
         <<set $gaveKeyItem2 to true>>   // will no longer repeat themselves
 
