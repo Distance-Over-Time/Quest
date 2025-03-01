@@ -22,7 +22,6 @@ public class ItemCollection : YarnStorageConnection
         IncrementFloatVariable(itemYarnName); // Increase quantity in crafting menu
         ChangeDiscoveredBool(itemDiscoverBoolName);
         Destroy(gameObject);
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.waterCollected, this.transform.position);
     }
     
     public void SetupPopup() {
