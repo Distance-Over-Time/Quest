@@ -104,8 +104,12 @@ public class CraftingActions : YarnStorageConnection
     }
 
     private void CraftingSuccess(string recipeName) {
+        Debug.Log(recipeName);
         GameObject craftedRecipe = GameObject.Find(recipeName);
         craftedRecipe.transform.GetChild(1).GetComponent<KeyItemReaction>().SetCraftedStatus(true);
+
+        // Update Yarn variable for talking to NPCs
+
 
         craftedPopup.GetComponent<ItemAcquiredActions>().PlayPopupAnim(craftedRecipe);
 

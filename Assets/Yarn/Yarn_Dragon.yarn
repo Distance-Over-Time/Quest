@@ -1,0 +1,34 @@
+﻿title: Yarn_Dragon
+tags:
+---
+
+// First time talking to Dragon
+<<if $dragonFirstChat is true>>
+    <<set $dragonFirstChat to false>>
+
+    // --- Dialogue for first chat with Dragon here
+    
+
+// Subsequent chats with Dragon, haven't given tea yet
+<<elseif $gaveKeyItem0 is false>>
+
+    // --- Any dialogue Dragon should say before a check for the Tea happens
+
+
+    <<if $craftedKeyItem0 is true>>     // Tea
+        <<set $matItem4 to 1>>          // Dragon gives player 1 honey
+        <<set $matItem5 to 1>>          // Dragon gives player 1 beeswax
+        <<set $gaveKeyItem0 to true>>   // will no longer repeat themselves
+
+        // --- Dialogue for giving Dragon tea here
+
+    <<endif>>
+
+// Subsequent chats with Dragon here, tea given
+<<else>>
+
+    // --- Dialogue for after giving Dragon Tea here
+
+<<endif>>
+
+===

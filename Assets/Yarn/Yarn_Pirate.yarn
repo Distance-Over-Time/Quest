@@ -1,0 +1,32 @@
+﻿title: Yarn_Pirate
+tags:
+---
+// First time talking to Pirate
+<<if $pirateFirstChat is true>>
+    <<set $pirateFirstChat to false>>
+
+    // --- Dialogue for first chat with Pirate here
+    
+
+// Subsequent chats with Pirate, haven't given Grog yet
+<<elseif $gaveKeyItem1 is false>>
+
+    // --- Any dialogue Pirate should say before a check for the Grog happens
+
+
+    <<if $craftedKeyItem1 is true>>     // Grog
+        <<set $matItem7 to 1>>          // Pirate gives player 1 lemon
+        <<set $gaveKeyItem1 to true>>   // will no longer repeat themselves
+
+        // --- Dialogue for giving Pirate Grog here
+
+    <<endif>>
+
+// Subsequent chats with Pirate here, Grog given
+<<else>>
+
+    // --- Dialogue for after giving Pirate Grog here
+
+<<endif>>
+
+===
