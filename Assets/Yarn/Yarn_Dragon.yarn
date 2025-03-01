@@ -7,7 +7,28 @@ tags:
     <<set $dragonFirstChat to false>>
 
     // --- Dialogue for first chat with Dragon here
+    Fern: *cough cough*
+    Fern: *cough cough ROARRRR*
+    Fern: Do excuse me, little apprentice.
+    Fern: It's this blasted cough--makes my fire control as weak as a hatchling's.
+    Fern: I was headed to the meadow to find some soothing herbs for a spot of tea, but at this rate, I'll set all the flowers on fire.
+    Fern: ...Hmm.
+    Fern: ...I don't suppose a resourceful witch's hand like yourself could spare an errand or two for a sickly, old dragon?
     
+    -> You don't look a day over 300.
+        Fern: Flattery will get you anywhere, dear.
+        Fern: For your honeyed words and youthful aid, I will, of course, reward you handsomely.
+
+    -> Of course, anything you need, great dragon.
+        Fern: No need to be frightened, dearie, I'm not going to eat you.
+        Fern: Roasting on the other hand... Let us just say the longer my throat is inflamed, the higher the risk.
+        Fern: If you can hurry back with what I need, I will gladly reward you.
+
+    Fern: Somewhere down that path and around the wall is a patch of wild chamomile. Though I don't know the exact location, I've tasted it in the honey of my bees.
+    Fern: Just a handful will work wonders on my throat. Oh, and, a dipper of well-water to boil, please.
+    Fern: A few sips and I should be able to gently smoke out my little companions and check their hives and golden hoard.
+    Fern: 
+
 
 // Subsequent chats with Dragon, haven't given tea yet
 <<elseif $gaveKeyItem0 is false>>
