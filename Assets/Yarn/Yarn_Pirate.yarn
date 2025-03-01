@@ -6,6 +6,34 @@ tags:
     <<set $pirateFirstChat to false>>
 
     // --- Dialogue for first chat with Pirate here
+    Dubloon: 25...26...27 golden beauties--
+    Dubloon: ARRR! AVAST!
+    Dubloon: Stay back or I'll gut ye from head to toe!
+    Dubloon: I know what ye be here fer an' ye won't get it! Over my undead body!
+    Dubloon: ...
+    Dubloon: Which be to say ne'er!
+    Dubloon: I'll drag this here chest with me to the watery depths 'fore I hand it to the likes o' you!
+
+    -> What's in the chest?
+        Dubloon: Aha! I knew ye was a thieving ingrate!
+        Dubloon: Wouldn't ye like to know?
+        Dubloon: The knowledge won't get yer grubby hands any closer to me sour gold.
+        
+
+    -> I'm not here for the chest.
+        Dubloon: Aha! I knew it--!
+        Dubloon: Y-yer not?
+        Dubloon: L-lies! Everyone be here fer me treasure!!
+        Dubloon: ...
+        Dubloon: ...Ye really aren't interested in the sour gold?
+
+    Dubloon: ...I mean that there be no such thing inside this here chest. S-so don't think ye'll be gettin' any.
+    Dubloon: Even if ye asked nicely.
+    Dubloon: I won't part with a single o' these golden beauties for anything less than...
+    Dubloon: Less than liquid gold! Or 
+    Dubloon: ...If I were to part with any o' these golden beauties...
+    Dubloon: 
+
     
 
 // Subsequent chats with Pirate, haven't given Grog yet
