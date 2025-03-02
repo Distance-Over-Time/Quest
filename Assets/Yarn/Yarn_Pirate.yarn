@@ -47,7 +47,7 @@ tags:
     Dubloon: I-I mean, step to! Away with you! 
 
     // --- Any dialogue Pirate should say before a check for the Grog happens
-    Dubloon: Ye think ye can hornswaggle Captain Dubloon? 
+    Dubloon: Belay yer carousin'--Ye think ye can hornswaggle Captain Dubloon? 
     Dubloon: I've sailed with enough cheap cooks and drunks and cheap, drunk cooks to know watered mead on sight, ye daft knave.
     Dubloon: The magic grog <i>sparkles</i>. Made by some poncy fairies or somethin'.
     Dubloon: It's yer lucky day, matey. I've become rrrreal patient since I, uh, took a swim and lost a lot of weight...
@@ -60,24 +60,34 @@ tags:
         <<set $gaveKeyItem1 to true>>   // will no longer repeat themselves
 
         // --- Dialogue for giving Pirate Grog here
-        Dubloon: Yer back. I didn't-- I didn't know if ye would be...
-        Dubloon: I wasn't watchin' fer yer return or anythin' o' the sort.
-        Dubloon: Just--my lips be parched. I'm eager to splice the mainbrace with fey spirits, that's all.
-            -> One bottle of golden grog, made just for you.
+        Dubloon: Yer back!
+        Dubloon: Of course, I wasn't watchin' fer yer return or anythin' o' the sort.
+        Dubloon: My lips be parched is all. With all this talk of fey spirits.
+            -> One bottle of golden grog, made just for you, matey.
                 Dubloon: Ye...ye made this yerself?
                 Dubloon: Fer...fer me?
-                Dubloon: I mean, o' course ye did! That impressed by me fearsome reputation, eh?!
-                Dubloon: That an' I'm sure ye 
+                Dubloon: I mean, o' course ye did! That impressed by me fearsome reputation, eh?! Captain Dubloon who leaves no quarter!
+                Dubloon: That an' I'm sure ye didn't want to be run through with me cutlass.
 
             -> Would you please accept this trade of golden grog for sour gold?
-                Dubloon: W-well when ye says it that way, what gentleman pirate could rightly refuse such a trade?
+                Dubloon: W-well when ye says it that way, what fine gentleman of fortune such as meself could rightly refuse such a trade?
                 Dubloon: I suppose I be willing to part with a single piece o' my treasure since ye paid the price I named.
         
         Dubloon: But first, a taste. 
         The pirate uncorks the bottle with his teeth, downing the golden fluid in swift gulps. It is unclear where the liquid is going.
         Dubloon: ...
         Dubloon: ...
-        Dubloon: 
+        Dubloon: Aye, that sure be the taste of a fairy's touch. 
+        Dubloon: Runs right through ye.
+        Dubloon: ...
+        Dubloon: You know what every good grog needs? A healthy dose of lemon.
+        Dubloon: ...Though I suppose, once I pull them out, you'll be off then.
+        Dubloon: <sub>Ask them to stay a while, ye yellow-bellied chowder-head--Nay, that'd be <i>unusual</i>. Shiver me timbers, imagine saying all this aloud--</sub>
+        Dubloon: <sub>I...I didn't say that out loud, right? How strong be this spirit--?</sub>
+        Dubloon: ...
+        Dubloon: Er, here ye are. My finest treasure is yours.
+        Dubloon: An' well...if...if'n ye should find yerself in need of more citrons...
+        Dubloon: Well I don't see meself leavin' this port anytime soon.
 
     <<endif>>
 
@@ -85,6 +95,15 @@ tags:
 <<else>>
 
     // --- Dialogue for after giving Pirate Grog here
+    Dubloon: ...and if ye must sell your soul to the work, at least make sure there be good plunder for it. If not, best hop ships at the next port--
+    Dubloon: Hold that thought, matey.
+    Dubloon: Ahoy there! I was just tellin' me new friend--
+    Dubloon: Er...that is, were there always two o' ye about?
+    Dubloon: ...I might be three sheets to the wind. Loaded to the gunwall as it were.
+    Dubloon: It's good to see you again, bucko. Er...again, again. 
+    Dubloon: Or maybe this be the second time.
+    Dubloon: I've lost count.
+    Dubloon: The less countin' the better, me thinks. No need to keep inventory when tradin' lemons 'tween friends.
 
 <<endif>>
 
