@@ -7,34 +7,39 @@ tags:
     <<set $dragonFirstChat to false>>
 
     // --- Dialogue for first chat with Dragon here
-    Fern: *cough cough*
-    Fern: *cough cough ROARRRR*
-    Fern: Do excuse me, little apprentice.
-    Fern: It's this blasted cough--makes my fire control as weak as a hatchling's.
-    Fern: I was headed to the meadow to find some soothing herbs for a spot of tea, but at this rate, I'll set all the flowers on fire.
+    Fern: <i>*cough cough*</i>
+    Fern: <i>*cough cough <b>ROARRRR*</b></i>
+    <i>A column of fire licks towards the Apprentice, setting the surrounding foliage aflame.</i>
+    Fern: Ahem.
+    Fern: Do excuse me, little apprentice. You ducked at just the right moment.
+    Fern: This blasted cough makes my breath control weaker than a hatchling's.
+    Fern: <i><sub>I'll burn down more than just a few trees at this rate...</i></sub>
     Fern: ...Hmm.
-    Fern: ...I don't suppose a resourceful witch's hand like yourself could spare an errand or two for a sickly, old dragon?
-    
-    -> You don't look a day over 300.
-        Fern: Flattery will get you anywhere, dear.
-        Fern: For your honeyed words and youthful aid, I will, of course, reward you handsomely.
+    Fern: ...I don't suppose a resourceful witch's hand such as yourself could spare an errand for an old, sickly dragon?
+        -> You don't look a day over 300.
+            Fern: Flattery will get you anywhere, dear.
+            Fern: For your honeyed words and youthful aid, I will, of course, reward you handsomely from my hoard.
+        -> Of course, anything you need, great dragon.
+            Fern: No need to be frightened, dearie, I'm not going to eat you.
+            Fern: Roasting on the other hand... 
+            Fern: Let's just say if you can hurry back with what I need before I set another tree on fire, I will gladly reward you from my hoard.
 
-    -> Of course, anything you need, great dragon.
-        Fern: No need to be frightened, dearie, I'm not going to eat you.
-        Fern: Roasting on the other hand... Let us just say the longer my throat is inflamed, the higher the risk.
-        Fern: If you can hurry back with what I need, I will gladly reward you.
-
-    Fern: Somewhere down that path and around the wall is a patch of wild chamomile. Though I don't know the exact location, I've tasted it in the honey of my bees.
-    Fern: Just a handful will work wonders on my throat. Oh, and, a dipper of well-water to boil, please.
-    Fern: A few sips and I should be able to gently smoke out my little companions and check their hives and golden hoard.
-    Fern: 
+    Fern: My bees have been making chamomile honey recently, so there must be a patch of flowers growing nearby.
+    Fern: If you can fetch me a <b>small bouquet</b> and a dipper of <b>well-water</b>, I can make a spot of tea and we won't have to worry about using the water to put out any fires.
+    Fern: Best of all, I'll be able to check on the hives again without worrying that my smoke will turn to flame. The poor darlings don't deserve that sort of heat.
+    Fern: Can you do that for me?
+    Fern: <i>Excellent.</i> I always knew the Witch had a good eye for helpers.
 
 
 // Subsequent chats with Dragon, haven't given tea yet
 <<elseif $gaveKeyItem0 is false>>
 
     // --- Any dialogue Dragon should say before a check for the Tea happens
-
+    Fern: Oh, I do get anxious being away from my hoard and hives for so long.
+    Fern: <i>*cough cough*</i>
+    Fern: Hurry back, if you please, little apprentice.
+    Fern: Just a few sprigs of chamomile and enough water to boil a pot will do.
+    Fern: I'll handle the--*cough*--rest.
 
     <<if $craftedKeyItem0 is true>>     // Tea
         <<set $matItem4 to 1>>          // Dragon gives player 1 honey
@@ -42,6 +47,28 @@ tags:
         <<set $gaveKeyItem0 to true>>   // will no longer repeat themselves
 
         // --- Dialogue for giving Dragon tea here
+        Fern: <i>Hmm...do humans get lost easier than bees? It's been too long since I watched one work out in the wild.</i>
+        Fern: <sub><i>Or perhaps the Witch called them back already...? That one was always rather impatient...</i></sub>
+            ->I made you tea!
+                Fern: Oh my! What a resourceful apprentice you are!
+                Fern: I'm sure your master appreciates you taking initiative this way~
+            ->For you, greatest of dragons.
+                Fern: How deferent and resourceful you are, little apprentice.
+                Fern: You must be a favorite of your master's.
+        
+        Fern: Mmm. Magically roasted and boiled, I take it?
+        Fern: It does one good to taste something other than dragon fire every so often.
+        Fern: Not a moment too soon either--I--
+        Fern: <i>*COUGH COUGH*</i>
+        Fern: <i>*GULP GULP GULP*</i>
+        Fern: Oh dear. I seem to have swallowed the whole cup.
+        Fern: <sub>A little glass never hurt anyone. </sub>
+        Fern: Let's see... Ah ah ah... ah ah...
+        Fern: Fantastic. 
+        The dragon breathes out a fine and steady plume of smoke. It smells a little sweet.
+        Fern: This will do just fine.
+        Fern: And, a dragon always keeps their word.
+        Fern: As promised, golden treasures from my most precious hoard.
 
     <<endif>>
 
@@ -49,6 +76,10 @@ tags:
 <<else>>
 
     // --- Dialogue for after giving Dragon Tea here
+    Fern: Take some unsolicited advice from an old dragon, little apprentice.
+    Fern: Never work for free if you can help it.
+    Fern: Oh sure, help an old dragon on the side of the road, but be sure you get something out of it mentally, physically, or spiritually.
+    Fern: Though I much prefer physical compensation, myself. I haven't been able to shake that preference in oh, a thousand years, ha!
 
 <<endif>>
 

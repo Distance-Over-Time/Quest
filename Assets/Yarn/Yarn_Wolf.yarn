@@ -6,19 +6,24 @@ tags:
     <<set $wolfFirstChat to false>>
 
     // --- Dialogue for first chat with Wolf here
+    Lou: <i>Awoooo...</i>
+    Lou: <i>Awooooooo....</i>
+    The wolf jumps, noticing that they have an acquired an audience to their "awoo"-ing.
     Lou: O-oh, h-hello...
-    Lou: Are you here to buy some produce? Some... Some t-tomatoes maybe??
-    -> I'd love to buy some tomatoes!
-        Lou: ...
-    -> Are you alright?
-        Lou: ...
-    //Lou: *sniffling*
-    Lou: I'm so sorry, I can't--
-    Lou: I CAN'T HARVEST ANYTHING RIGHT NOWHOOHOOHOOO
-    Lou: I KEEP CRUSHING MY POOR TOMATOES WHENEVER I TRY AWOOOOOHOOHOO
-    Lou: I-if only I wasn't out of grandpa's special Wolf-B-Gone salve-- Then I could control my grip strength--
-    Lou: P-please, if you insist on buying tomatoes, would you mind coming back when I've made some more?
-    Lou: I-I won't be long-- there's some wolfsbane just down the road...
+    Lou: A-are you here to buy some produce? 
+    Lou: Some... Some <i>tomatoes</i> maybe??
+        -> I'd love to buy some tomatoes!
+            Lou: ...
+        -> Are you alright?
+            Lou: ...
+    Lou: <i>*sniffling*</i>
+    Lou: ...I'm so sorry, I can't--
+    Lou: I CAN'T HARVEST ANYTHING RIGHT NOW-OOOOOOOOOOO
+    Lou: I KEEP CRUSHING THE POOR TOMATOES EVERY TIME I TRY AWOOOOO
+    Lou: I-if only I wasn't out of grandpa's special <b>Wolf-B-Gone salve</b>-- 
+    Lou: I-if only I could control my grip strength--
+    Lou: P-please, if you insist on buying tomatoes, could you come back when I've made some more salve?
+    Lou: I-it won't take too long--there's some wolfsbane just down the road...
     Lou: ...Oh, but the woods are s-so creepy and dark... 
     Lou: Ohhhh....
     Lou: M-maybe in a few more minutes.
@@ -29,8 +34,12 @@ tags:
 
     // --- Any dialogue Wolf should say before a check for the Salve happens
     Lou: What was the recipe again?
-    Lou: Oats and chamomile to soothe, honeyed wax to salve and smooth...
-    Lou: Tame outer wolf with purple bane, to sleep till moon comes round again.
+    Lou: <i>Oat and chamomile to soothe...</i>
+    Lou: <i>Honeyed wax to salve and smooth...</i>
+    Lou: <i>Tame thine wolf with purple bane...</i>
+    Lou: <i>...To sleep till moon comes round again.</i>
+    Lou: <sub>But I don't want to enter the woods by myself.</sub>
+    Lou: <sub>Maybe if I wait long enough, this customer will give up on me and leave? </sub>
 
     // --- Dialogue if interacted a third time but no salve yet
     //Lou: Oats. Chamomile. Wax. Wolfsbane.
@@ -43,28 +52,28 @@ tags:
         <<set $gaveKeyItem3 to true>>   // will no longer repeat themselves
 
         // --- Dialogue for giving Wolf salve here
-        Lou: The countryside would be fun, they said. You should take a break from being in town, they said...
+        Lou: <i>The countryside would be fun, they said. You should take a break from being in town, they said...</i>
         Lou: O-oh! I didn't see you there. S-sorry.
-        Lou: D-did you still want tomatoes after all? Only... Only... I haven't--
-        Lou: Awooooo.... 
-        -> I made you some Wolf-B-Gone!
-            Lou: Oh...
-            Lou: Oh??? You made more? How did you know the recipe?
-            Lou: Did you know my grandpa too? Everyone here knows him apparently--
-            Lou: Oh, sorry, I'm just so excited to be able to hold a tomato without crushing it.
-
-        -> Yep, still here for the tomatoes.
-            Lou: Oh...
-            Lou: I'm s-sorry, but I'm not even a real farmer, my grandpa left me this farm--
-            Lou: Wait. Is that... is that ACHOO! Wolf-B-Gone I smell??? How did you-- Did you brave the really scary forest--?
-            Lou: Sorry, I'm just so excited to be able to hold a tomato without crushing it. 
+        Lou: D-did you still want tomatoes after all? 
+        Lou: Only... Only... I haven't--
+        Lou: <i>Awooooo.... </i>
+            -> I made you some Wolf-B-Gone!
+                Lou: Oh...
+                Lou: Oh??? You made more? How did you know the recipe?
+                Lou: Did you know my grandpa too? Everyone here knows him apparently--
+            -> Yep, still here for the tomatoes.
+                Lou: Oh...
+                Lou: I'm s-sorry, but I'm not even a real farmer--my grandpa left me this farm--
+                Lou: Wait. Is that... is that <i>ACHOO!</i> Wolf-B-Gone I smell???
+                Lou: How did you-- Did you brave the really scary forest--?!
             
-        Lou: Before I get too distracted--
-        Lou: Let me rub some on my arms and... YES! I can feel it working! 
+        Lou: S-sorry, I'm just so excited to be able to hold a tomato without crushing it again.
+        The wolf aggressively slathers the purple balm all over the furry forearms without a second thought.
+        Lou: YES!!! I can feel it working! 
         Lou: AWOOOOOOOOHOOHOOHAHAHA!
-        Lou: Sorry, I'm just so happy that I can't stop crying. I can do it grandpa! I can harvest my first tomato crop!
-        Lou: Here, take some tomatoes! On the house!
-        
+        Lou: I can't stop crying--I'm so--I can do it grandpa! I can harvest my first tomato crop!
+        Lou: I won't have to go back to being a soulless henchman for an evil liege lord who mistreats his serfs! I <i>can</i> be my own boss!
+        Lou: Here, take some tomatoes, on the house--I insist!
         
 
 
@@ -74,6 +83,11 @@ tags:
 <<else>>
 
     // --- Dialogue for after giving Wolf Salve here
+    Lou: Tell all your friends about this farm! Once they have wolf-grown wolf peaches, they'll never go back, I promise.
+    Lou: <sub>And then I'll use the money to buy more seeds and use those seeds to grow more crops and as long as I time it right and track everything in meticulously kept charts--</sub>
+    Lou: Well. <i>Maybe</i> I'll also have to go into the woods again to get more wolfsbane, b-but--
+    Lou: W-we don't have to worry about that right now!!! I-I'm being a fully grown wolf!!
+    Lou: <i><sub> Awoooo... </sub></i>
 
 <<endif>>
 
