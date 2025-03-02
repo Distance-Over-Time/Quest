@@ -1,45 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8671650189385541284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: ../../Game Projects/Quest game/quest_fmod/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638754107061926399
-  FileSizes:
-  - Name: Desktop
-    Value: 23840
-  Exists: 1
---- !u!114 &-6822988964622813795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambience.bank
-  m_EditorClassIdentifier: 
-  Path: ../../Game Projects/Quest game/quest_fmod/Build/Desktop/Ambience.bank
-  Name: Ambience
-  StudioPath: bank:/Ambience
-  lastModified: 638754107075197219
-  FileSizes:
-  - Name: Desktop
-    Value: 1040736
-  Exists: 1
 --- !u!114 &-4642673626650678159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +19,7 @@ MonoBehaviour:
     Data3: 985289367
     Data4: -931403174
   Banks:
-  - {fileID: -6822988964622813795}
+  - {fileID: -1169642826181249695}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -115,6 +75,24 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-2932938467409532326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Build/Desktop/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/Build/Desktop/Music.bank
+  Name: Build/Desktop/Music
+  StudioPath: bank:/Music
+  lastModified: 638759152140000000
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2719040262445309459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +112,7 @@ MonoBehaviour:
     Data3: -1950536826
     Data4: 2050451993
   Banks:
-  - {fileID: -8671650189385541284}
+  - {fileID: 3443095743882235370}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -142,7 +120,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 355
---- !u!114 &-1191786191994887226
+--- !u!114 &-1169642826181249695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,15 +130,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
+  m_Name: bank:/Build/Desktop/Ambience.bank
   m_EditorClassIdentifier: 
-  Path: ../../Game Projects/Quest game/quest_fmod/Build/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 638759152132015334
-  FileSizes:
-  - Name: Desktop
-    Value: 9585376
+  Path: Assets/Audio/Build/Desktop/Ambience.bank
+  Name: Build/Desktop/Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638754107080000000
+  FileSizes: []
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -175,11 +151,11 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 3254064471629355503}
-  - {fileID: 6678058913071673022}
-  - {fileID: -8671650189385541284}
-  - {fileID: -6822988964622813795}
-  - {fileID: -1191786191994887226}
+  - {fileID: 7663637976361424629}
+  - {fileID: -1169642826181249695}
+  - {fileID: 1815064410178070024}
+  - {fileID: -2932938467409532326}
+  - {fileID: 3443095743882235370}
   EditorEvents:
   - {fileID: -4642673626650678159}
   - {fileID: -2719040262445309459}
@@ -187,10 +163,10 @@ MonoBehaviour:
   - {fileID: 8340777242869499822}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 6678058913071673022}
+  - {fileID: 1815064410178070024}
   StringsBanks:
-  - {fileID: 3254064471629355503}
-  cacheTime: 638759152132015334
+  - {fileID: 7663637976361424629}
+  cacheTime: 638759152140000000
   cacheVersion: 131622
 --- !u!114 &404748612449029795
 MonoBehaviour:
@@ -240,7 +216,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &3254064471629355503
+--- !u!114 &1815064410178070024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,15 +226,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Name: bank:/Build/Desktop/Master.bank
   m_EditorClassIdentifier: 
-  Path: ../../Game Projects/Quest game/quest_fmod/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638759152111219354
-  FileSizes:
-  - Name: Desktop
-    Value: 1240
+  Path: Assets/Audio/Build/Desktop/Master.bank
+  Name: Build/Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 638759152120000000
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3443095743882235370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Build/Desktop/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/Build/Desktop/SFX.bank
+  Name: Build/Desktop/SFX
+  StudioPath: bank:/SFX
+  lastModified: 638754107080000000
+  FileSizes: []
   Exists: 1
 --- !u!114 &4764091279274767784
 MonoBehaviour:
@@ -279,7 +271,7 @@ MonoBehaviour:
     Data3: 179624578
     Data4: -1397871764
   Banks:
-  - {fileID: -8671650189385541284}
+  - {fileID: 3443095743882235370}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -287,7 +279,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6678058913071673022
+--- !u!114 &7663637976361424629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -297,15 +289,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Name: bank:/Build/Desktop/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: ../../Game Projects/Quest game/quest_fmod/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638759152111199485
+  Path: Assets/Audio/Build/Desktop/Master.strings.bank
+  Name: Build/Desktop/Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638759152120000000
   FileSizes:
-  - Name: Desktop
-    Value: 1036
+  - Name: 
+    Value: 1240
   Exists: 1
 --- !u!114 &8340777242869499822
 MonoBehaviour:
@@ -326,7 +318,7 @@ MonoBehaviour:
     Data3: -1251705421
     Data4: -375904123
   Banks:
-  - {fileID: -1191786191994887226}
+  - {fileID: -2932938467409532326}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
