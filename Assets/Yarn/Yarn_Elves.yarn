@@ -53,6 +53,13 @@ tags:
             Ash: INDEED.
             Oak: So we ask again, visitor from afar, how might we two quench your thirst?
                 -> I'm sorry, I can't stop for drinks.
+                    Ash: WE ARE SORRY TO HEAR THAT.
+                    Oak: There is always time for merriment.
+                    Ash: SO LONG AS YOU HAVE THE COIN FOR IT.
+                    Oak: The work will wait for you.
+                    Ash: NO MATTER. YOU WILL BE BACK WHEN IT IS YOUR TIME.
+                    Oak: We await your return, esteemed guest.
+                    
         <<if $craftedKeyItem0 is false>>   
             Oak: So visitor from afar, tell us, how might we two quench your thirst?
                 -> I don't suppose you have chamomile tea?
