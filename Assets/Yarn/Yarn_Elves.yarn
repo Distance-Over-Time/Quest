@@ -20,17 +20,6 @@ tags:
 // Subsequent chats with Elves, haven't given Porridge yet
 <<elseif $gaveKeyItem2 is false>>
 
-    // --- Player still hasn't talked to Pirate, still hasn't made Porriage
-    <<if $pirateFirstChat is false>>
-
-        // --- Dialogue if Player as not yet talked to Pirate, no Porriage here
-
-    <<else>>
-
-        // --- Dialogue if Player has talked to Pirate, but no Porriage here
-
-    <<endif>>
-
     // --- Any dialogue Elves should say before a check for the Porridge happens
 
 
