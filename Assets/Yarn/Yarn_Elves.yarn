@@ -9,10 +9,61 @@ tags:
     <<if $pirateFirstChat is false>>
         
         // --- Dialogue for first chat with Elves here (talked to Pirate first)
+        Oak: <sub>A customer.</sub>
+        Ash: <sub>A CUSTOMER.</sub>
+        Oak: Welcome paying patron to our humble establishment~
+        Oak: We invite you to peruse our menu of spirits, nightcaps, and libations, all made by fairy hands... 
+        Ash: HOW MIGHT WE SERVE YOU TODAY?
+        Oak: Perhaps a thimble of morning dew?
+        Ash: AN ELFSHOT OF BLACKBERRY CORDIAL?
+        Oak: Flax into Gold perhaps or--
+        Ash: SOME HONEYWINE?
+        Oak: Ash, my goodfellow, we are out of honeywine.
+        Ash: AH. THE ISSUE WITH THE BEES.
+        Oak: We must pay the great dragon a visit.
+
+        <<if $gaveKeyItem0 is true>>
+            Oak: Although the trees rustle with whispers--I believe we will have honey again for our stores.
+            Ash: INDEED.
+        
+        Oak: So we ask again, visitor from afar, how might we two quench your thirst?
+        -> I'm looking for some golden grog.
+
+        -> I've been told of a golden drink, said to be the finest in this land...?
+
 
     <<else>>
 
         // --- Dialogue for first chat with Elves here (did not talk to Pirate first)
+        Oak: <sub>A customer.</sub>
+        Ash: <sub>A CUSTOMER.</sub>
+        Oak: Welcome paying patron to our humble establishment~
+        Oak: We invite you to peruse our menu of spirits, nightcaps, and libations, all made by fairy hands... 
+        Ash: HOW MIGHT WE SERVE YOU TODAY?
+        Oak: Perhaps a thimble of morning dew?
+        Ash: AN ELFSHOT OF BLACKBERRY CORDIAL?
+        Oak: Flax into Gold perhaps or--
+        Ash: SOME HONEYWINE?
+        Oak: Ash, my goodfellow, we are out of honeywine.
+        Ash: AH. THE ISSUE WITH THE BEES.
+        Oak: We must pay the great dragon a visit.
+        
+        <<if $gaveKeyItem0 is true>>
+            Oak: Although the trees rustle with whispers--I believe we will have honey again for our stores.
+            Ash: INDEED.
+            Oak: So we ask again, visitor from afar, how might we two quench your thirst?
+                -> I'm sorry, I can't stop for drinks.
+        <<if $craftedKeyItem0 is false>>   
+            Oak: So visitor from afar, tell us, how might we two quench your thirst?
+                -> I don't suppose you have chamomile tea?
+                    Ash: NO.
+                    Ash: THOUGH NOT FOR LACK OF TRYING.
+                    Ash: OUR TEA TENDS TO BE...
+                    Oak: Very strong. You may slumber for a hundred years after a single sip.
+                    Oak: But if it is chamomile you seek, the trees speak of a meadow overlooking the sea...
+                
+
+        
 
     <<endif>>
     

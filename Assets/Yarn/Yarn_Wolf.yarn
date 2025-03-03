@@ -8,7 +8,7 @@ tags:
     // --- Dialogue for first chat with Wolf here
     Lou: <i>Awoooo...</i>
     Lou: <i>Awooooooo....</i>
-    The wolf jumps, noticing that they have an acquired an audience to their "awoo"-ing.
+    <i<The wolf jumps, noticing that they have an acquired an audience to their soft whimpers</i>
     Lou: O-oh, h-hello...
     Lou: A-are you here to buy some produce? 
     Lou: Some... Some <i>tomatoes</i> maybe??
@@ -23,7 +23,7 @@ tags:
     Lou: I-if only I wasn't out of grandpa's special <b>Wolf-B-Gone salve</b>-- 
     Lou: I-if only I could control my grip strength--
     Lou: P-please, if you insist on buying tomatoes, could you come back when I've made some more salve?
-    Lou: I-it won't take too long--there's some wolfsbane just down the road...
+    Lou: I-it won't take too long--there's some wolfsbane in a little clearing in the woods…just down the road that way…
     Lou: ...Oh, but the woods are s-so creepy and dark... 
     Lou: Ohhhh....
     Lou: M-maybe in a few more minutes.
@@ -64,7 +64,8 @@ tags:
             -> Yep, still here for the tomatoes.
                 Lou: Oh...
                 Lou: I'm s-sorry, but I'm not even a real farmer--my grandpa left me this farm--
-                Lou: Wait. Is that... is that <i>ACHOO!</i> Wolf-B-Gone I smell???
+                Lou: Wait. Is that... is that--<i>ACHOO!</i>--Wolf-B-Gone I smell???
+                Lou: <i>Wolfsbane always tickles my nose like nothing else--</i>
                 Lou: How did you-- Did you brave the really scary forest--?!
             
         Lou: S-sorry, I'm just so excited to be able to hold a tomato without crushing it again.
@@ -86,8 +87,8 @@ tags:
     Lou: Tell all your friends about this farm! Once they have wolf-grown wolf peaches, they'll never go back, I promise.
     Lou: <sub>And then I'll use the money to buy more seeds and use those seeds to grow more crops and as long as I time it right and track everything in meticulously kept charts--</sub>
     Lou: Well. <i>Maybe</i> I'll also have to go into the woods again to get more wolfsbane, b-but--
-    Lou: W-we don't have to worry about that right now!!! I-I'm being a fully grown wolf!!
-    Lou: <i><sub> Awoooo... </sub></i>
+    Lou: W-we don't have to worry about that right now!!! I-I'm being a real adult already!!
+    Lou: <i><sub>...Awoooo... </sub></i>
 
 <<endif>>
 

@@ -39,7 +39,7 @@ tags:
     Fern: <i>*cough cough*</i>
     Fern: Hurry back, if you please, little apprentice.
     Fern: Just a few sprigs of chamomile and enough water to boil a pot will do.
-    Fern: I'll handle the--*cough*--rest.
+    Fern: I'll handle the--<i>*cough*</i>--rest.
 
     <<if $craftedKeyItem0 is true>>     // Tea
         <<set $matItem4 to 1>>          // Dragon gives player 1 honey
@@ -65,7 +65,7 @@ tags:
         Fern: <sub>A little glass never hurt anyone. </sub>
         Fern: Let's see... Ah ah ah... ah ah...
         Fern: Fantastic. 
-        The dragon breathes out a fine and steady plume of smoke. It smells a little sweet.
+        <i>The dragon breathes out a fine and steady plume of smoke. It smells sweet.</i>
         Fern: This will do just fine.
         Fern: And, a dragon always keeps their word.
         Fern: As promised, golden treasures from my most precious hoard.

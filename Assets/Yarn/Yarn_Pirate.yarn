@@ -6,9 +6,9 @@ tags:
     <<set $pirateFirstChat to false>>
 
     // --- Dialogue for first chat with Pirate here
-    Dubloon: 22...23...24...
-    Dubloon: 25...26...27 golden beauties--
-    The skeletal sailor SLAMS the chest he's hunched over shut.
+    Dubloon: <i>22...23...24...</i>
+    Dubloon: <i>25...26...27 golden beauties--</i>
+    <i>The skeletal sailor SLAMS the chest he's hunched over shut.</i>
     Dubloon: ARRR! AVAST!
     Dubloon: Stay back or I'll gut ye from head to toe!
     Dubloon: I know what ye be here fer an' ye won't get it! Over my undead body!
@@ -36,7 +36,7 @@ tags:
 
 // Subsequent chats with Pirate, haven't given Grog yet
 <<elseif $gaveKeyItem1 is false>>
-    Dubloon: 'Bout those tales I be hearing... ''bout a famous golden drink... 
+    Dubloon: 'Bout those tales I be hearing... 'bout a famous golden drink... 
     Dubloon: They say dead men don't tell 'em, but...
     Dubloon: ...I--I could be persuaded to share some with ye, if ye asked.
     Dubloon: The tales! Not the grog!
@@ -68,17 +68,15 @@ tags:
                 Dubloon: Fer...fer me?
                 Dubloon: I mean, o' course ye did! That impressed by me fearsome reputation, eh?! Captain Dubloon who leaves no quarter!
                 Dubloon: That an' I'm sure ye didn't want to be run through with me cutlass.
-
             -> Would you please accept this trade of golden grog for sour gold?
                 Dubloon: W-well when ye says it that way, what fine gentleman of fortune such as meself could rightly refuse such a trade?
                 Dubloon: I suppose I be willing to part with a single piece o' my treasure since ye paid the price I named.
         
         Dubloon: But first, a taste. 
-        The pirate uncorks the bottle with his teeth, downing the golden fluid in swift gulps. It is unclear where the liquid is going.
+        <i>The pirate uncorks the bottle with his teeth, downing the golden fluid in swift gulps. It is unclear where the liquid is going.</i>
         Dubloon: ...
         Dubloon: ...
-        Dubloon: Aye, that sure be the taste of a fairy's touch. 
-        Dubloon: Runs right through ye.
+        Dubloon: Aye, that sure be the taste of a fairy's touch. Runs right through ye.
         Dubloon: ...
         Dubloon: You know what every good grog needs? A healthy dose of lemon.
         Dubloon: ...Though I suppose, once I pull them out, you'll be off then.
