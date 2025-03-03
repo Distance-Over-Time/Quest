@@ -4,18 +4,18 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class CraftingMenu : MonoBehaviour
+public class MenuActivation : MonoBehaviour
 {
     private bool isOn;
     [SerializeField] private PlayerInput playerControls;
-    [SerializeField] private GameObject firstMat;
+    [SerializeField] private GameObject selectFirst;
 
     void Start() {
         isOn = false;
         gameObject.SetActive(isOn);
     }
 
-    public void ActivateCraftWindow() {
+    public void ActivateWindow() {
         isOn = !isOn;
         gameObject.SetActive(isOn);
         ToggleMovementControls(isOn);
@@ -39,9 +39,8 @@ public class CraftingMenu : MonoBehaviour
     }
 
     IEnumerator SetFirstButton() {
-        // just let a girl load into existence, okay? jesus
         yield return null;
-        EventSystem.current.SetSelectedGameObject(firstMat);
+        EventSystem.current.SetSelectedGameObject(selectFirst);
     }
 
 }

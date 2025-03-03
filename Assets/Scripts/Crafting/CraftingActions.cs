@@ -13,7 +13,7 @@ public class CraftingActions : YarnStorageConnection
     [SerializeField] private int potFillCount = 0;
     [SerializeField] private GameObject potRow;
     [SerializeField] private CraftingSolutions solutions;
-    [SerializeField] private CraftingMenu menuStatus;
+    [SerializeField] private MenuActivation menuStatus;
     [SerializeField] private GameObject[] materialObjs;
     [SerializeField] private GameObject craftedPopup;
 
