@@ -1,6 +1,21 @@
 ﻿title: Yarn_Portal
 tags:
 ---
+//Start
+    //Witch: APPRENTICE I REQUIRE STUFFS
+    //Witch: BRING IT TO ME OR FACE THE CONSEQUENCES
+
+//Repeat interaction with portal
+    //Apprentice: Not right now, I need to get the materials.
+
+//After all ingredients gathered but potion not crafted
+    //Apprentice: after all why shouldnt i craft it
+
+//After potion crafted
+    //Witch: YOU FOOL THIS IS TOXIC
+    //Witch: I have to do everything myself
+    //Witch: adds a bunch of stuff and makes the right drink
+    //Witch: now that you're all done with this errand, let's start a new fetch quest
 
 // ending variables should be changed here, but set up in Yarn_Start
 
