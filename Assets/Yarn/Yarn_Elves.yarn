@@ -10,67 +10,108 @@ tags:
         
         // --- Dialogue for first chat with Elves here (talked to Pirate first)
         Oak: <sub>A customer.</sub>
-        Ash: <sub>A CUSTOMER.</sub>
+        Ash: <sub>CUSTOMER.</sub>
         Oak: Welcome paying patron to our humble establishment~
         Oak: We invite you to peruse our menu of spirits, nightcaps, and libations, all made by fairy hands... 
-        Ash: HOW MIGHT WE SERVE YOU TODAY?
+        Ash: HOW CANS WE SERVES YOU TODAY?
         Oak: Perhaps a thimble of morning dew?
-        Ash: AN ELFSHOT OF BLACKBERRY CORDIAL?
-        Oak: Flax into Gold perhaps or--
-        Ash: SOME HONEYWINE?
-        Oak: Ash, my goodfellow, we are out of honeywine.
-        Ash: AH. THE ISSUE WITH THE BEES.
-        Oak: We must pay the great dragon a visit.
+        Ash: JUICY, DELICIOUS BLACKBERRY CORDIAL?
+        Oak: Flax into Gold perhaps or an elfshot of--
+        Ash: HONEYWINE?
+        Oak: Ash, my good fellow, we are out of honeywine.
+        Ash: THE BEES.
+        Oak: Yes, they do not slumber yet. We must pay the great dragon a visit.
 
+        //Checking to see if player gave tea to Dragon
         <<if $gaveKeyItem0 is true>>
-            Oak: Although the trees rustle with whispers--I believe we will have honey again for our stores.
-            Ash: INDEED.
-        
+            Oak: Although, the trees rustle with whispers--I believe we will have honey again for our stores soon.
+            Ash: YES. YESSSSS.
+        <<endif>>
+
         Oak: So we ask again, visitor from afar, how might we two quench your thirst?
         -> I'm looking for some golden grog.
-
+            Ash: GROG?! NASTY.
+            Oak: It is an affront to our skills.
+            Oak: Although, my dearest Ash, we do not turn away customers without taste.
+            Ash: <sub>BLECH.</sub>
+            Oak: Perhaps if we let them taste the golden ichor, unfiltered....
+            Ash: THEY WILL LEARN! YES!
+            Oak: Indeed. We will elevate your palette valued patron.
+            Oak: Though, we do not do any work for free.
+            
         -> I've been told of a golden drink, said to be the finest in this land...?
+            Ash: PRETTY WORDS.
+            Oak: Though not an exaggeration. Our honeywine draws many souls to these woods.
+            Oak: If that is what you seek, like so many at our door, ingredient stock aside, we must emphasize that we do not do any work for free.
 
+            Ash: THE GOLD. I DO NOT SMELL IT.
+            Oak: Nor have I heard its clink on your person.
+            Oak: But your hands speak of familiarity with creation, dear patron.
+            Oak: And we do love a good barter. Might we offer a trade between fellow artisans?
+            Ash: TRADE! TRADE! TRADE!
+            Oak: ...Are you familiar with a warm meal common to menfolk--a mix of oats and water and a dash of something sweet?
+            Ash: WARM. SWEET.
+            Oak: When we used to complete work in town as naive woodsprites, those grateful for our service would leave a bowl of oatmeal on the windowsill overnight.
+            Oak: I believe I speak for both of us when I say we should like to taste it again.
+            Ash: AGAIN AGAIN. HOT GRAIN, HOT GRAIN!
+            Oak: In return, we will offer you the means to make your...golden drink.
+            Ash: GOOD. GOOD!
+            Ash: I LOVE PORRIDGE.
+            Oak: We eagerly await your return.
 
     <<else>>
 
         // --- Dialogue for first chat with Elves here (did not talk to Pirate first)
         Oak: <sub>A customer.</sub>
-        Ash: <sub>A CUSTOMER.</sub>
+        Ash: <sub><i>CUSTOMER.</i></sub>
         Oak: Welcome paying patron to our humble establishment~
         Oak: We invite you to peruse our menu of spirits, nightcaps, and libations, all made by fairy hands... 
-        Ash: HOW MIGHT WE SERVE YOU TODAY?
+        Ash: HOW CAN WE SERVES YOU TODAY?
         Oak: Perhaps a thimble of morning dew?
-        Ash: AN ELFSHOT OF BLACKBERRY CORDIAL?
-        Oak: Flax into Gold perhaps or--
-        Ash: SOME HONEYWINE?
-        Oak: Ash, my goodfellow, we are out of honeywine.
-        Ash: AH. THE ISSUE WITH THE BEES.
-        Oak: We must pay the great dragon a visit.
+        Ash: JUICY, DELICIOUS BLACKBERRY CORDIAL?
+        Oak: Flax into Gold perhaps or an elfshot of--
+        Ash: HONEYWINE?
+        Oak: Ash, my good fellow, we are out of honeywine.
+        Ash: THE BEES.
+        Oak: Yes, they do not slumber yet. We must pay the great dragon a visit.
         
         <<if $gaveKeyItem0 is true>>
-            Oak: Although the trees rustle with whispers--I believe we will have honey again for our stores.
-            Ash: INDEED.
-            Oak: So we ask again, visitor from afar, how might we two quench your thirst?
-                -> I'm sorry, I can't stop for drinks.
-                    Ash: WE ARE SORRY TO HEAR THAT.
-                    Oak: There is always time for merriment.
-                    Ash: SO LONG AS YOU HAVE THE COIN FOR IT.
-                    Oak: The work will wait for you.
-                    Ash: NO MATTER. YOU WILL BE BACK WHEN IT IS YOUR TIME.
-                    Oak: We await your return, esteemed guest.
-                    
-        <<if $craftedKeyItem0 is false>>   
+            Oak: Although the trees rustle with whispers--I believe we will have honey again for our stores soon.
+            Ash: YES. YESSSSS.
+        <<endif>>
+
+        Oak: So we ask again, visitor from afar, how might we two quench your thirst?
+            -> I'm sorry, I can't stop for drinks.
+                Ash: BORING! WORK IS BORING.
+                Oak: Ash means that there is always time for merriment.
+                Ash: AND DRINKS! AS LONG AS YOU HAVE COIN.
+                Oak: Or a good barter. We cannot resist a binding trade...
+                Oak: But a discussion for another time.
+                Ash: YOU WILL BE BACK.
+            -> Maybe I can return when I'm done with my errands?
+                Ash: YOU WORK FOR NO COIN. FOOLISH.
+                Oak: Ash means that we hope you are not being exploited. We have, ourselves, left unpaid servitude behind and embrace only payment in full.
+                Oak: Though, good Ash, I believe our esteemed guest is an <i>apprentice</i>.
+                Ash: YOU ARE LEARNING? SOON YOU WILL BE IN CHARGE?
+                Oak: A discussion for another time perhaps, when you are free to partake.
+                Ash: WAITING. WE WAITS FOR YOU.
+
+        <<else>> 
             Oak: So visitor from afar, tell us, how might we two quench your thirst?
+               <<if $craftedKeyItem0 is false>>   
                 -> I don't suppose you have chamomile tea?
                     Ash: NO.
-                    Ash: THOUGH NOT FOR LACK OF TRYING.
-                    Ash: OUR TEA TENDS TO BE...
-                    Oak: Very strong. You may slumber for a hundred years after a single sip.
+                    Ash: WE TRY AND WE TRY.
+                    Ash: THE TEA IS TOO STRONG.
+                    Oak: Much too strong. You may slumber for a hundred years after a single sip.
+                    <<if $foundMatItem1 is false>>  
                     Oak: But if it is chamomile you seek, the trees speak of a meadow overlooking the sea...
-                
+                    <<else>>
+                    Oak: It is better brewed with hands untouched by fey magic.
+                -> 
+            <<endif>>
 
-        
+
 
     <<endif>>
     
