@@ -49,6 +49,9 @@ tags:
 <<declare $elvesFirstChat = true>>
 <<declare $portalFirstChat = true>>
 
+// Additional porridge check! PORRIDGE!!
+<<declare $porridgeFirstChat = true>>
+
 // --- Start your dialogue for the beginning of the game below this line ---
 
 
