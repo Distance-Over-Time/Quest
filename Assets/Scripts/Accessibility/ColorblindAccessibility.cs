@@ -1,21 +1,53 @@
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
-[ExecuteInEditMode]
-public class ColorblindEffect : MonoBehaviour
+public class ColorblindAccessibility : MonoBehaviour
 {
-    public Material colorblindMaterial;
-    [Range(0, 3)] public int mode = 0; // 0 = Normal, 1 = Protanopia, 2 = Deuteranopia, 3 = Tritanopia
+    [SerializeField] private Material colorblindMaterial;
+    private ColorblindBlitPass colorblindPass;
+    private ScriptableRenderer scriptableRenderer;
 
-    private void OnRenderImage(RenderTexture source, RenderTexture destination)
+    void Start()
     {
-        if (colorblindMaterial != null)
+        // Load the shader dynamically
+        Shader shader = Shader.Find("Hidden/ColorblindCorrection");
+        if (shader != null)
         {
-            colorblindMaterial.SetFloat("_Mode", mode);
-            Graphics.Blit(source, destination, colorblindMaterial);
+            Debug.Log("Shader Loaded: " + shader.name);
+            colorblindMaterial = new Material(shader);
+            Debug.Log("Colorblind material created!");
         }
         else
         {
-            Graphics.Blit(source, destination);
+            Debug.LogError("Colorblind shader not found!");
+            return;
+        }
+
+        // Create and register the Blit Pass
+        colorblindPass = new ColorblindBlitPass(colorblindMaterial);
+
+        var urpAsset = GraphicsSettings.currentRenderPipeline as UniversalRenderPipelineAsset;
+        var renderer = urpAsset?.scriptableRenderer as UniversalRenderer;
+
+        if (renderer != null)
+        {
+            Debug.Log("Found URP Renderer. Adding Colorblind Effect Pass...");
+            colorblindPass.renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing;
+            renderer.EnqueuePass(colorblindPass);
+        }
+        else
+        {
+            Debug.LogError("No valid URP Renderer found.");
+        }
+    }
+
+    public void SetColorblindMode(int mode)
+    {
+        if (colorblindPass != null)
+        {
+            colorblindPass.mode = mode;
+            Debug.Log("Colorblind mode set to: " + mode);
         }
     }
 }

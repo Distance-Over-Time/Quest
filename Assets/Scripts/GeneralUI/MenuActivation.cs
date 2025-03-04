@@ -6,9 +6,10 @@ using UnityEngine.InputSystem;
 
 public class MenuActivation : MonoBehaviour
 {
+    public string menuType;
     private bool isOn;
     [SerializeField] private PlayerInput playerControls;
-    [SerializeField] private GameObject selectFirst;
+    [SerializeField] protected GameObject selectFirst;
 
     void Start() {
         isOn = false;
@@ -38,9 +39,27 @@ public class MenuActivation : MonoBehaviour
         }
     }
 
-    IEnumerator SetFirstButton() {
+    public void ToggleMenuControls(bool isOn) {
+        switch (menuType) {
+            case "pause":
+                break;
+            case "craft":
+                break;
+            case "accessibility":
+                break;
+            default:
+                break;
+        }
+    }
+
+    protected IEnumerator SetFirstButton() {
         yield return null;
         EventSystem.current.SetSelectedGameObject(selectFirst);
+    }
+
+    public void GoToMenu(GameObject targetMenu) {
+        targetMenu.SetActive(true);
+        gameObject.SetActive(false);
     }
 
 }
