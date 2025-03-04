@@ -59,6 +59,8 @@ tags:
             Ash: I LOVE PORRIDGE.
             Oak: We eagerly await your return.
 
+            <<set $porridgeFirstChat to false>>
+
     <<else>>
 
         // --- Dialogue for first chat with Elves here (did not talk to Pirate first)
@@ -108,8 +110,8 @@ tags:
                     Oak: But if it is chamomile you seek, the trees speak of a meadow overlooking the sea...
                     <<else>>
                     Oak: It is better brewed with hands untouched by fey magic.
-                -> 
-            <<endif>>
+                    //-> 
+                    <<endif>>
 
 
 
@@ -119,26 +121,83 @@ tags:
 // Subsequent chats with Elves, haven't given Porridge yet
 <<elseif $gaveKeyItem2 is false>>
 
-    // --- Player still hasn't talked to Pirate, still hasn't made Porriage
+    // --- Player still hasn't talked to Pirate, still hasn't made Porridge
     <<if $pirateFirstChat is false>>
 
-        // --- Dialogue if Player as not yet talked to Pirate, no Porriage here
+        // --- Dialogue if Player as not yet talked to Pirate, no Porridge here
+        <i> Perhaps it's best to return when you have free time. Or a reason to be here. Whichever unlikely one comes first.</i>
 
     <<else>>
 
-        // --- Dialogue if Player has talked to Pirate, but no Porriage here
+        // --- Dialogue if Player has talked to Pirate, but no Porridge here
+        <<if $porridgeFirstChat is true>>
+        Oak: Esteemed patron, you return.
+        Ash: WE KNEW. WE KNEW. WE SENSED IT. 
+        Oak: A whisper on the wind.
+        Ash: DRINK NOW? DRINK?
+        -> I'm looking for some golden grog.
+            Ash: GROG?! NASTY.
+            Oak: It is an affront to our skills.
+            Oak: Although, my dearest Ash, we do not turn away customers without taste.
+            Ash: <sub>BLECH.</sub>
+            Oak: Perhaps if we let them taste the golden ichor, unfiltered....
+            Ash: THEY WILL LEARN! YES!
+            Oak: Indeed. We will elevate your palette valued patron.
+            Oak: Though, we do not do any work for free.
+            
+        -> I've been told of a golden drink, said to be the finest in this land...?
+            Ash: PRETTY WORDS.
+            Oak: Though not an exaggeration. Our honeywine draws many souls to these woods.
+            Oak: If that is what you seek, like so many at our door, ingredient stock aside, we must emphasize that we do not do any work for free.
 
-    <<endif>>
-        
+            Ash: THE GOLD. I DO NOT SMELL IT.
+            Oak: Nor have I heard its clink on your person.
+            Oak: But your hands speak of familiarity with creation, dear patron.
+            Oak: And we do love a good barter. Might we offer a trade between fellow artisans?
+            Ash: TRADE! TRADE! TRADE!
+            Oak: ...Are you familiar with a warm meal common to menfolk--a mix of oats and water and a dash of something sweet?
+            Ash: WARM. SWEET.
+            Oak: When we used to complete work in town as naive woodsprites, those grateful for our service would leave a bowl of oatmeal on the windowsill overnight.
+            Oak: I believe I speak for both of us when I say we should like to taste it again.
+            Ash: AGAIN AGAIN. HOT GRAIN, HOT GRAIN!
+            Oak: In return, we will offer you the means to make your...golden drink.
+            Ash: GOOD. GOOD!
+            Ash: I LOVE PORRIDGE.
+            Oak: We eagerly await your return.
+            <<set $porridgeFirstChat to false>>
+
+        <<else>>
+        Oak: Alas, we cannot help you with the making of that golden drink until we receive payment.
+        Ash: WE WOULDN'T CHEAT YOU.
+        Oak: Indeed, we would not. It would be against our professional pride.
+        Ash: RETURN WITH THE WARM AND THE SWEET.
+        Oak: Then we shall aid you as is deserved.
 
     // --- Any dialogue Elves should say before a check for the Porridge happens
 
 
     <<if $craftedKeyItem2 is true>>     // Porridge
-        <<set $matItem7 to 1>>          // Elves gives player 1 Grog (?)
         <<set $gaveKeyItem2 to true>>   // will no longer repeat themselves
 
         // --- Dialogue for giving Elves Porridge here
+
+        Ash: BACK AGAIN?
+        Ash: I SMELL...I SMELL--!!!
+        -> I made porridge!
+            Ash: PORRIDGE!!!
+            Oak: Even I can barely contain my excitement. Oh, it has been an age since I tasted the joy of a bowl of sweetened oats...
+        -> One bowl of hot oatmeal as ordered.
+            Oak: Made exactly to order and then some, how kind of you.
+            Ash: IT IS TIME! 
+        <i>The elves each take a heaping spoonful of oatmeal and shovel it into their mouths.</i>
+        Ash: YES! YESSSSS!!! DELICIOUS!!!!
+        Oak: A moment please while we savor the taste--our hands, skilled as they are, cannot recreate this nostalgic treat.
+        Ash: THE TASTIEST!
+        Oak: Mmm~
+        <i> The bowl is scraped clean and then licked even cleaner.</i>
+        Oak: Ah.
+        Oak: And now, as promised...
+        <<set $matItem7 to 1>>          // Elves gives player 1 Grog (?)
 
     <<endif>>
 

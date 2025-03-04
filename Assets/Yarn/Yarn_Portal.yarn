@@ -4,28 +4,66 @@ tags:
 //Start
 <<if $portalFirstChat is true>>
     <<set $portalFirstChat to false>>
-    //Witch: APPRENTICE I REQUIRE STUFFS
-    //Witch: BRING IT TO ME OR FACE THE CONSEQUENCES
+    Witch: APPRENTICE.
+    Witch: HEED THESE <sub>PRE-RECORDED</sub> WORDS WELL.
+    Witch: NO DOUBT YOU HAVE QUESTIONS ABOUT WHY YOU'VE BEEN SENT TO THIS BACKWATER TOWN.
+    Witch: STOW THEM. IT IS NOT YOUR PLACE TO ASK.
+    Witch: ONLY FOCUS ON GATHERING THAT WHICH I DEMAND OF YOU:
+    Witch: <i><b>WOLF PEACH</b>, RED AND RIPE,</i>
+    Witch: <i><b>MONKSHOOD</b>, BITTER ACONITE,</i>
+    //something something bite.
+    Witch: <i><b>QUEEN'S GOLD</b>, STINGING SWEET,</i>
+    Witch: <i><b>SAILOR'S SOUR SAVIOR</b>, TREASURE OF THE FLEET.</i>
+    Witch: EVEN ONE AS INEXPERIENCED AS YOU SHOULD BE ABLE TO SOURCE WHAT I REQUIRE.
+    Witch: DO NOT RETURN WITHOUT THEM.
+    <i>The magic fizzles, leaving tingling traces on the apprentice's skin.</i>
+    <i>The Witch has spoken.</i>
+    <i>Best get to fetching what they need...</i>
+
+    // Subsequent interaction with Portal, haven't collected materials yet
+    Apprentice: I can't go back yet.
+    Apprentice: Not without the wolf peach, monkshood, queen's gold, or sailor's sour savior.
+    Apprentice: <sub>Even missing one of them would be a <b>disaster.</sub></b>
+
 
 // Player has not yet crafted the potion
 <<elseif $craftedFinalItem is false>>
     // --- Dialogue for Player not having crafted the potion yet
-
-    -> Craft the Potion
+    
+    Apprentice: I've finally gathered everything my master asked of me.
+    Apprentice: ...What if this a test though...?
+    <i>It would not be the first time the Witch has pulled such a trick.</i>
+    Apprentice: Should I just return with the ingredients?
+    Apprentice: Or should I combine them into one mixed brew...?
+    Apprentice: What would a senior apprentice do?
+    Apprentice: ...What will impress my master most?
+	-> Pass only the ingredients through the portal.
         // Dialogue
-
-    -> Don't Craft position, call to the witch
+		Apprentice: Best not to risk it.
+		Apprentice: Better to be called slovenly than to appear too ambitious where witches are involved.
         // Ending A
-        <<jump EndingA>>
+		<<jump EndingA>>
+	-> Craft a potion using the ingredients.
+        Apprentice: I should show my master what I am capable of...
+        Apprentice: That I have learned from this journey the skills they meant to teach me...
+		Apprentice: <sub>Maybe then they'll stop sending me on these goose chases.</sub>
+		<i>The apprentice readies their supplies for combination.</i>
 
+      
 // Player has crafted the potion
+
 <<else>>
-    -> Give Witch the Potion
+    //Dialogue after crafting the potion and interacting with the portal again
+    <i>The gently twinkling, purple brew swirls inside the glass flask.</i>
+    <i>Surely this is what the Witch requested.</i>
+    <i>Although a more inquisitive apprentice might ask... <b>why</i> did the Witch request this?</i>
+    <i>What would an all-powerful Witch need a potion like this for?</i>
+    <i>To amass...more power...perhaps?</i>
+    -> Drink the potion... 
+        <<jump BadEnding>>
+    -> Resist temptation. Pass the potion through the portal.
         // Ending B
         <<jump EndingB>>
-
-    -> Drink the Potion
-        <<jump BadEnding>>
 
 <<endif>>
 
