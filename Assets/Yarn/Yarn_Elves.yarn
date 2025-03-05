@@ -11,13 +11,14 @@ tags:
         // --- Dialogue for first chat with Elves here (talked to Pirate first)
         Oak: <sub>A customer.</sub>
         Ash: <sub>CUSTOMER.</sub>
+        <i>The two elves offer deep, identical bows in perfect unison.</i>
         Oak: Welcome paying patron to our humble establishment~
         Oak: We invite you to peruse our menu of spirits, nightcaps, and libations, all made by fairy hands... 
         Ash: HOW CANS WE SERVES YOU TODAY?
         Oak: Perhaps a thimble of morning dew?
         Ash: JUICY, DELICIOUS BLACKBERRY CORDIAL?
         Oak: Flax into Gold perhaps or an elfshot of--
-        Ash: HONEYWINE?
+        Ash: HONEYWINE!
         Oak: Ash, my good fellow, we are out of honeywine.
         Ash: THE BEES.
         Oak: Yes, they do not slumber yet. We must pay the great dragon a visit.
@@ -34,7 +35,7 @@ tags:
             Oak: It is an affront to our skills.
             Oak: Although, my dearest Ash, we do not turn away customers without taste.
             Ash: <sub>BLECH.</sub>
-            Oak: Perhaps if we let them taste the golden ichor, unfiltered....
+            Oak: Perhaps if we let them taste the golden ichor, unfiltered...untainted...
             Ash: THEY WILL LEARN! YES!
             Oak: Indeed. We will elevate your palette valued patron.
             Oak: Though, we do not do any work for free.
@@ -51,13 +52,13 @@ tags:
             Ash: TRADE! TRADE! TRADE!
             Oak: ...Are you familiar with a warm meal common to menfolk--a mix of oats and water and a dash of something sweet?
             Ash: WARM. SWEET.
-            Oak: When we used to complete work in town as naive woodsprites, those grateful for our service would leave a bowl of oatmeal on the windowsill overnight.
+            Oak: When we used to complete work in town as naive woodsprites, those grateful for our anonymous service would leave a bowl of oatmeal on the windowsill overnight.
             Oak: I believe I speak for both of us when I say we should like to taste it again.
             Ash: AGAIN AGAIN. HOT GRAIN, HOT GRAIN!
-            Oak: In return, we will offer you the means to make your...golden drink.
-            Ash: GOOD. GOOD!
+            Oak: In return, we will offer you the means and ways to make your...golden drink.
+            Oak: Though you will need honey and water, at the very least, to complete the recipe we offer.
             Ash: I LOVE PORRIDGE.
-            Oak: We eagerly await your return.
+            Oak: Indeed. We eagerly await your return.
 
             <<set $porridgeFirstChat to false>>
 
@@ -66,6 +67,7 @@ tags:
         // --- Dialogue for first chat with Elves here (did not talk to Pirate first)
         Oak: <sub>A customer.</sub>
         Ash: <sub><i>CUSTOMER.</i></sub>
+        <i>The two teensy elves offer deep, identical bows in perfect unison.</i>
         Oak: Welcome paying patron to our humble establishment~
         Oak: We invite you to peruse our menu of spirits, nightcaps, and libations, all made by fairy hands... 
         Ash: HOW CAN WE SERVES YOU TODAY?
@@ -82,7 +84,28 @@ tags:
             Ash: YES. YESSSSS.
         <<endif>>
 
-        Oak: So we ask again, visitor from afar, how might we two quench your thirst?
+        <<if $craftedKeyItem0 is false>>
+            Oak: So visitor from afar, tell us, how might we two quench your thirst?
+                -> I don't suppose you have chamomile tea?
+                        Ash: NO.
+                        Ash: WE TRY AND WE TRY.
+                        Ash: THE TEA IS TOO STRONG.
+                        Oak: Much too strong. You may slumber for a hundred years after a single sip.
+                        <<if $foundMatItem1 is false>>  
+                        Oak: But if it is chamomile you seek, the trees speak of a meadow overlooking the sea...
+                        <<else>>
+                        Oak: It is better brewed with hands untouched by fey magic.
+                        Oak: Was there anything else we could offer you in the meantime?
+                            <<jump gotta_go>>
+        <<else>>
+            Oak: So we ask again, visitor from afar, how might we two quench your thirst?
+                <<jump gotta_go>>
+
+        <<endif>>
+        ===
+
+        title: gotta_go
+        ---
             -> I'm sorry, I can't stop for drinks.
                 Ash: BORING! WORK IS BORING.
                 Oak: Ash means that there is always time for merriment.
@@ -97,22 +120,6 @@ tags:
                 Ash: YOU ARE LEARNING? SOON YOU WILL BE IN CHARGE?
                 Oak: A discussion for another time perhaps, when you are free to partake.
                 Ash: WAITING. WE WAITS FOR YOU.
-
-        <<else>> 
-            Oak: So visitor from afar, tell us, how might we two quench your thirst?
-               <<if $craftedKeyItem0 is false>>   
-                -> I don't suppose you have chamomile tea?
-                    Ash: NO.
-                    Ash: WE TRY AND WE TRY.
-                    Ash: THE TEA IS TOO STRONG.
-                    Oak: Much too strong. You may slumber for a hundred years after a single sip.
-                    <<if $foundMatItem1 is false>>  
-                    Oak: But if it is chamomile you seek, the trees speak of a meadow overlooking the sea...
-                    <<else>>
-                    Oak: It is better brewed with hands untouched by fey magic.
-                    //-> 
-                    <<endif>>
-
 
 
     <<endif>>
@@ -140,7 +147,7 @@ tags:
             Oak: It is an affront to our skills.
             Oak: Although, my dearest Ash, we do not turn away customers without taste.
             Ash: <sub>BLECH.</sub>
-            Oak: Perhaps if we let them taste the golden ichor, unfiltered....
+            Oak: Perhaps if we let them taste the golden ichor, unfiltered...untainted...
             Ash: THEY WILL LEARN! YES!
             Oak: Indeed. We will elevate your palette valued patron.
             Oak: Though, we do not do any work for free.
@@ -157,21 +164,21 @@ tags:
             Ash: TRADE! TRADE! TRADE!
             Oak: ...Are you familiar with a warm meal common to menfolk--a mix of oats and water and a dash of something sweet?
             Ash: WARM. SWEET.
-            Oak: When we used to complete work in town as naive woodsprites, those grateful for our service would leave a bowl of oatmeal on the windowsill overnight.
+            Oak: When we used to complete work in town as naive woodsprites, those grateful for our anonymous service would leave a bowl of oatmeal on the windowsill overnight.
             Oak: I believe I speak for both of us when I say we should like to taste it again.
             Ash: AGAIN AGAIN. HOT GRAIN, HOT GRAIN!
-            Oak: In return, we will offer you the means to make your...golden drink.
-            Ash: GOOD. GOOD!
+            Oak: In return, we will offer you the means and ways to make your...golden drink.
+            Oak: Though you will need honey and water, at the very least, to complete the recipe we offer.
             Ash: I LOVE PORRIDGE.
-            Oak: We eagerly await your return.
-            <<set $porridgeFirstChat to false>>
+            Oak: Indeed. We eagerly await your return.
 
         <<else>>
         Oak: Alas, we cannot help you with the making of that golden drink until we receive payment.
-        Ash: WE WOULDN'T CHEAT YOU.
-        Oak: Indeed, we would not. It would be against our professional pride.
+        Ash: WE DO NOT CHEAT.
+        Oak: Quite right, we would not cross you that way. It would be against our professional pride.
         Ash: RETURN WITH THE WARM AND THE SWEET.
-        Oak: Then we shall aid you as is deserved.
+        Oak: <i>Then</i> we shall aid you as is deserved.
+        <<endif>>
 
     // --- Any dialogue Elves should say before a check for the Porridge happens
 
@@ -185,7 +192,7 @@ tags:
         Ash: I SMELL...I SMELL--!!!
         -> I made porridge!
             Ash: PORRIDGE!!!
-            Oak: Even I can barely contain my excitement. Oh, it has been an age since I tasted the joy of a bowl of sweetened oats...
+            Oak: Even I, myself, can barely contain my excitement. Oh, it has been an age since I tasted the joy of a bowl of sweetened oats...
         -> One bowl of hot oatmeal as ordered.
             Oak: Made exactly to order and then some, how kind of you.
             Ash: IT IS TIME! 
@@ -195,9 +202,44 @@ tags:
         Ash: THE TASTIEST!
         Oak: Mmm~
         <i> The bowl is scraped clean and then licked even cleaner.</i>
-        Oak: Ah.
+        Oak: Perfection.
         Oak: And now, as promised...
+        Oak: The recipe for our famed honeywine is thus...
+        //player should at this point have water and honey no matter what -- cannot make porridge without honey, honey cannot be got without water
+        Ash: HONEY.
+        Oak: And water.
+        Oak: ...Yes, I believe that's it.
+        Ash: NOW STIR. STIR! STIRRRR!!!
+        <i>The apprentice tentatively pours the water and honey into a waiting bottle.</i>
+        <i>They stir the contents, honey swirling into water, blending, blending until...</i>
+        Ash: CORK.
+        Ash: AND WAIT.
+        Oak: Yes, now we wait.
+        Ash: ...
+        Oak: ...
+        Ash: ...
+        Oak: ...
+        Ash: ...
+        Oak: ...
+        -> ...How long do we wait?
+            Oak: ...It <i>does</i> seem to require a long time in human years, doesn't it?
+        -> Is it...ready?
+            Ash: NO!
+            Ash: TAKING LONGER THAN EXPECTED.
+
+        Oak:...Perhaps...
+        Oak: You <i>did</i> mix it yourself, so we fulfilled our end of the bargain to teach you the means and methods...
+        Oak: But to ensure you walk out of here, palate elevated...
+        <i>The elves grin at each other, all teeth. Sharp teeth.</i>
+        <i>PING! They tap on the bottle in unison. The apprentice blinks.</i>
+        <i>What was once just globs of honey haphazardly mixed into water becomes an amber nectar, somehow both viscous and transparent, glinting in the light.</i> 
         <<set $matItem7 to 1>>          // Elves gives player 1 Grog (?)
+        Oak: There you are, one honeywine. I mean, er--
+        Ash: GROG. DISGUSTING.
+        Oak: No, no, Ash, I'm sure it'll be delicious. Like no grog our friend here has ever tasted. I would swear it on the boughs and the leaves.
+        Ash: DELICIOUS.
+        Oak: Enjoy your drink then, and come back again soon when you have a craving for more!
+        Ash: YOU WILL CRAVE MORE!
 
     <<endif>>
 
@@ -205,6 +247,20 @@ tags:
 <<else>>
 
     // --- Dialogue for after giving Elves Porridge here
+    Oak: You return, customer!
+    Ash: FRIEND. PORRIDGE FRIEND.
+    Oak: We dream of that porridge, Ash and I do. Perhaps when you find another drink worthy of your <i>refined</i> taste buds, we can make one more trade?
+    Ash: PORRIDGE~
+    Ash: SOON.
+    Oak: We didn't have a lot going for us while we worked in town--most working fair folk do not ask for payment, you know.
+    Oak: We did it for the love of the craft.
+    Ash: AND PORRIDGE.
+    Oak: Yes, it was the porridge, that delicious oatmeal that made us stay in town for so long, but also spurred us to become craftsmen who are paid up front.
+    Ash: WE LIKE TO BE VALUED.
+    Ash: WE MAKE BETTER DRINKSES THEN.
+    Oak: A lesson, I think for an apprentice such as yourself.
+    Ash: WE SHARE THE OATMEAL WISDOM.
+    Oak: May you be inspired by your own porridge in time, as well.
 
 <<endif>>
 
