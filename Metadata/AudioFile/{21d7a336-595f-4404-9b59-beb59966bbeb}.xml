@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{21d7a336-595f-4404-9b59-beb59966bbeb}">
 		<property name="assetPath">
-			<value>SFX/Items/select_chamomile.wav</value>
+			<value>Audio/Assets/SFX/Items/select_chamomile.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>

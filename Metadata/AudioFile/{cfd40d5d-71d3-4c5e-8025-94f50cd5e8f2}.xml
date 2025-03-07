@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{cfd40d5d-71d3-4c5e-8025-94f50cd5e8f2}">
 		<property name="assetPath">
-			<value>SFX/Items/select_tomato.wav</value>
+			<value>Audio/Assets/SFX/Items/select_tomato.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>

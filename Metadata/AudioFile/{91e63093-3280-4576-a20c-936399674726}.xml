@@ -2,7 +2,10 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{91e63093-3280-4576-a20c-936399674726}">
 		<property name="assetPath">
-			<value>SFX/Player/fs_inside_4.wav</value>
+			<value>Audio/Assets/SFX/Player/fs_inside_4.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>

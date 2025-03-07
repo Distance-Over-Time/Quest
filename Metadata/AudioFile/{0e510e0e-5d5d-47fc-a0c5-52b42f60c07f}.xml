@@ -2,7 +2,10 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{0e510e0e-5d5d-47fc-a0c5-52b42f60c07f}">
 		<property name="assetPath">
-			<value>SFX/Items/select_water.wav</value>
+			<value>Audio/Assets/SFX/Items/select_water.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>

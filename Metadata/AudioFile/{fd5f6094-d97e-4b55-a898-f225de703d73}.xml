@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{c5f1b77a-97f0-4522-86c6-cbb7aad33b57}">
+	<object class="AudioFile" id="{fd5f6094-d97e-4b55-a898-f225de703d73}">
 		<property name="assetPath">
-			<value>Amb/outside_amb.wav</value>
+			<value>Audio/Assets/Amb/outside_amb.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{26483512-9149-49fa-8595-a4bdd346379f}">
 		<property name="assetPath">
-			<value>SFX/Items/select_wolfsbane.wav</value>
+			<value>Audio/Assets/SFX/Items/select_wolfsbane.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>

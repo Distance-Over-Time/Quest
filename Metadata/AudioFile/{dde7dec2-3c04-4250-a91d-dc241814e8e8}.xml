@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{dde7dec2-3c04-4250-a91d-dc241814e8e8}">
 		<property name="assetPath">
-			<value>SFX/Items/brew_sfx.wav</value>
+			<value>Audio/Assets/SFX/Items/brew_sfx.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>

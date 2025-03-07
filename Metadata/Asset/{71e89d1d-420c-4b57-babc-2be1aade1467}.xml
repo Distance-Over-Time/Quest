@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="EncodableAsset" id="{71e89d1d-420c-4b57-babc-2be1aade1467}">
 		<property name="assetPath">
-			<value>SFX/UI/</value>
+			<value>CURLY/UI/</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{4bab3bfe-554e-4b18-b1dc-83e0e680f9cb}</destination>

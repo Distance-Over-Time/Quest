@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{3b496c43-51bf-4cae-b4dc-2c2df8f83e52}">
 		<property name="assetPath">
-			<value>SFX/Items/select_honey.wav</value>
+			<value>Audio/Assets/SFX/Items/select_honey.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>
