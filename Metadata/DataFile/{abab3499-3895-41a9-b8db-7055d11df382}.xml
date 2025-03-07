@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{abab3499-3895-41a9-b8db-7055d11df382}">
+		<property name="assetPath">
+			<value>Audio/Assets/SFX/Items/select_lemon.wav.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4bab3bfe-554e-4b18-b1dc-83e0e680f9cb}</destination>
+		</relationship>
+	</object>
+</objects>

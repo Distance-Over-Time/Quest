@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{2e9bffd2-d42a-4fc0-a777-55706352fb52}">
+		<property name="assetPath">
+			<value>Audio/Assets/Music/main_loop.wav.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4bab3bfe-554e-4b18-b1dc-83e0e680f9cb}</destination>
+		</relationship>
+	</object>
+</objects>
