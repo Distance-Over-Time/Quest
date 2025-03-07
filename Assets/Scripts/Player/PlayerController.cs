@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
         PLAYBACK_STATE playbackState;
         playerFootsteps.getPlaybackState(out playbackState);
 
+        // comment to help move content over
         if (movement.Equals(Vector3.zero))
         {
 
