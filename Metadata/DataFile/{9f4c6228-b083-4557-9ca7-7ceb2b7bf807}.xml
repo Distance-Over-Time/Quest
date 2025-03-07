@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{9f4c6228-b083-4557-9ca7-7ceb2b7bf807}">
+		<property name="assetPath">
+			<value>Audio/Assets/SFX/UI/start_game.wav.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4bab3bfe-554e-4b18-b1dc-83e0e680f9cb}</destination>
+		</relationship>
+	</object>
+</objects>
