@@ -30,30 +30,37 @@ tags:
     Dubloon: Even if ye asked nicely.
     Dubloon: <sub> Though I wouldn't be opposed to hearin' that, maybe. No one e'er asks me anythin' nice-like. Not since the scurvy.</sub>
     Dubloon: ARR! I mean, I won't part with a single o' these golden beauties for anything less than an equivalent weight in gold. Or grog.
-    Dubloon: Or <b>golden grog</b>. I be hearing tales of some fancy magic spirits from 'round these here parts. 
-    Dubloon: Ye want even a glimpse o' me treasures, ye'll have to pay up. And don't be offering me no plain watered down mead. I can still taste the difference!
+    Dubloon: Or <b>golden grog</b>. 
+    Dubloon: I be hearing tales of some fancy magic spirits from 'round these here parts. What sparkles like real gold. 
+    Dubloon: Ye want even a glimpse o' me treasures, ye'll have to pay up. One whole bottle at least.
+    Dubloon: And don't be offering me no plain watered down mead. I can still taste the difference!
+    Dubloon: Now begone from me sight or I'll cut ye down.
     
 
 // Subsequent chats with Pirate, haven't given Grog yet
 <<elseif $gaveKeyItem1 is false>>
-    Dubloon: 'Bout those tales I be hearing... 'bout a famous golden drink... 
-    Dubloon: They say dead men don't tell 'em, but...
-    Dubloon: ...I--I could be persuaded to share some with ye, if ye asked.
-    Dubloon: The tales! Not the grog!
+    Dubloon: Belay yer carousin'--Ye think ye can hornswaggle Captain Dubloon?
+    Dubloon: I don't be seeing no bottle of magic grog on ye. 
+    Dubloon: U-unless...
+    Dubloon: <sub>Unless they be here just to talk to me?</sub>
     Dubloon: ...
-    Dubloon: <sub>Are ye bones be gettin' soft?! What scourge of the seven seas says somethin' like that--</sub>
-    Dubloon: Er-- Not the tales! Or the grog! 
-    Dubloon: Get out of here ye scallywag 'fore I do somethin' unforgiveable like-- like askin' ye to stay for a meal or somethin'!
-    Dubloon: I-I mean, step to! Away with you! 
+    Dubloon: ...
+    Dubloon: <sub>Are ye daft, Dubloon? What fool be here just to <i>talk</i> to the scourge of the seven seas--</sub>
+    Dubloon: <sub>Been on this beach by meself for too long.</sub> 
+    Dubloon: ...
+    Dubloon: ...
+    Dubloon: Ahem. Ahoy. 'Bout those tales of that famous golden drink made by poncy fairies or some sort... 
+    Dubloon: They say dead men don't tell 'em, but...
+    Dubloon: ...I--I could be persuaded to share some with ye, if ye were of a mind to listen.
+    Dubloon: The tales, I mean. Not the grog. 
+    Dubloon: <sub>Well. Maybe the grog. If they be good company.</sub>
+    Dubloon: ...
+    Dubloon: ...
+    Dubloon: Er--I mean, ARR! WHAT DID YE SAY?! THE GREAT CAPTAIN DUBLOON TELLIN' TALES TO ANY OLD VISITOR?! YE c
+    Dubloon: N-now get out of here ye scallywag 'fore I do somethin' unforgiveable like-- like askin' ye to stay for a meal or somethin'!
+    Dubloon: I mean, step to! Away with you! 
 
     // --- Any dialogue Pirate should say before a check for the Grog happens
-    Dubloon: Belay yer carousin'--Ye think ye can hornswaggle Captain Dubloon? 
-    Dubloon: I've sailed with enough cheap cooks and drunks and cheap, drunk cooks to know watered mead on sight, ye daft knave.
-    Dubloon: The magic grog <i>sparkles</i>. Made by some poncy fairies or somethin'.
-    Dubloon: It's yer lucky day, matey. I've become rrrreal patient since I, uh, took a swim and lost a lot of weight...
-    Dubloon: If ye hurry back, I might even be persuaded to tell ye 'bout that whole cursed venture.
-    Dubloon: <sub>What are ye even sayin', Dubloon?!</sub>
-    Dubloon: O-or I'll cut ye down where ye be standing, ye hear?!
 
     <<if $craftedKeyItem1 is true>>     // Grog
         <<set $matItem7 to 1>>          // Pirate gives player 1 lemon
@@ -68,15 +75,19 @@ tags:
                 Dubloon: Fer...fer me?
                 Dubloon: I mean, o' course ye did! That impressed by me fearsome reputation, eh?! Captain Dubloon who leaves no quarter!
                 Dubloon: That an' I'm sure ye didn't want to be run through with me cutlass.
+                Dubloon: <sub>Does this really count as fairy-made then?</sub>
+                Dubloon: ...
             -> Would you please accept this trade of golden grog for sour gold?
                 Dubloon: W-well when ye says it that way, what fine gentleman of fortune such as meself could rightly refuse such a trade?
                 Dubloon: I suppose I be willing to part with a single piece o' my treasure since ye paid the price I named.
         
-        Dubloon: But first, a taste. 
+        Dubloon: But first, a taste. To see if it's the real deal.
         <i>The pirate uncorks the bottle with his teeth, downing the golden fluid in swift gulps. It is unclear where the liquid is going.</i>
         Dubloon: ...
         Dubloon: ...
         Dubloon: Aye, that sure be the taste of a fairy's touch. Runs right through ye.
+        Dubloon: Tastes like...full sails and fair winds...
+        Dubloon: ...The joy of a good haul with a fine crew...singin' songs together, bellies and hearts full...
         Dubloon: ...
         Dubloon: You know what every good grog needs? A healthy dose of lemon.
         Dubloon: ...Though I suppose, once I pull them out, you'll be off then.
@@ -84,8 +95,10 @@ tags:
         Dubloon: <sub>I...I didn't say that out loud, right? How strong be this spirit--?</sub>
         Dubloon: ...
         Dubloon: Er, here ye are. My finest treasure is yours.
-        Dubloon: An' well...if...if'n ye should find yerself in need of more citrons...
-        Dubloon: Well I don't see meself leavin' this port anytime soon.
+        Dubloon: An' well...if...
+        Dubloon: If'n ye should find yerself in need of more citrons...
+        Dubloon: Well, I don't see meself leavin' this port anytime soon.
+        
 
     <<endif>>
 

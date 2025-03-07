@@ -7,7 +7,7 @@ tags:
 
         Oak: <sub>A customer.</sub>
         Ash: <sub>CUSTOMER.</sub>
-        <i>The two elves offer deep, identical bows in perfect unison.</i>
+        <i>The two woodsprites offer deep, identical bows in perfect unison.</i>
         Oak: Welcome paying patron to our humble establishment~
         Oak: We invite you to peruse our menu of spirits, nightcaps, and libations, all made by fairy hands... 
         Ash: HOW CANS WE SERVES YOU TODAY?
@@ -162,7 +162,7 @@ title: elvesPart2
         -> One bowl of hot oatmeal as ordered.
             Oak: Made exactly to order and then some, how kind of you. How very, very kind--
             Ash: IT IS TIME! 
-        <i>The elves shovel heaping spoonfuls of oatmeal into their mouths, gobbling with abandon.</i>
+        <i>Oak and Ash shovel heaping spoonfuls of oatmeal into their mouths, gobbling with abandon.</i>
         Ash: YES! YESSSSS!!! DELICIOUS!!!!
         Oak: Mmm~
         Oak: Our hands, skilled as they are, cannot recreate this nostalgic treat.
@@ -200,14 +200,14 @@ title: elvesPart2
         Oak: But to ensure you walk out of here, palate elevated...
         Oak: Surely...
         Ash: NO ONE WILL KNOW.
-        <i>The elves grin at each other, all teeth. Sharp teeth.</i>
+        <i>Ash and Oak grin at each other, all teeth. Sharp teeth.</i>
         <i>PING! They tap on the bottle in unison. The apprentice blinks.</i>
         <i>What was once just globs of honey haphazardly mixed into water becomes an amber nectar, somehow both viscous and transparent, glinting in the light.</i> 
-        <<set $matItem7 to 1>>          // Elves gives player 1 Grog (?)
+            <<set $craftedKeyItem1 to true>>          // Elves gives player 1 Grog (?)
         Oak: There you are, one honeywine. I mean, er--
         Ash: DISGUSTING GROG.
         Oak: No, no, Ash, I'm sure it'll be delicious. Like no grog our friend here has ever tasted. I would swear it on the boughs and the leaves.
-        Ash: DELICIOUS *gag* GROG.
+        Ash: DELICIOUS <i>*gag*</i> GROG.
         Oak: Enjoy your drink then, and come back again soon when you have a craving for more!
         Ash: YOU WILL CRAVE MORE!
 
