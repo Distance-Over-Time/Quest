@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{0834fb09-fb76-43e5-aa38-a5691413a843}">
+		<property name="name">
+			<value>pirate</value>
+		</property>
+		<relationship name="folder">
+			<destination>{27ebb7e0-e1bc-45ec-8178-c81883096b8e}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{824836cb-4626-432b-bd02-8417016ed609}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{824836cb-4626-432b-bd02-8417016ed609}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.69999998807907104</value>
+		</property>
+	</object>
+</objects>

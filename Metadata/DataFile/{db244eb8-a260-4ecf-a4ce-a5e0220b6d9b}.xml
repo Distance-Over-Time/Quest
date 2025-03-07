@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DataFile" id="{db244eb8-a260-4ecf-a4ce-a5e0220b6d9b}">
+		<property name="assetPath">
+			<value>Audio/Assets/SFX/Player/fs_inside_5.wav.meta</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4bab3bfe-554e-4b18-b1dc-83e0e680f9cb}</destination>
+		</relationship>
+	</object>
+</objects>
