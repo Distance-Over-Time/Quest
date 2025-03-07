@@ -1,15 +1,34 @@
+using System.Collections;
+using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using System.Reflection;
 using SOHNE.Accessibility.Colorblindness;
 
-public class ColorblindUI : MenuActivation
-{
+/* 
+    (In order of the buttons on the UI)
+    
+    MODE                INT
+    -----------------------
+    Normal               0
+    Achromatopsia        7
+    Achromatomaly        8
+    Deuteranopia         3
+    Deuteranomaly        4
+    Protanopia           1
+    Protanomaly          2
+    Tritanopia           5
+    Tritanomaly          6
+*/
+
+
+public class ColorblindUI : MenuActivation {
     private Colorblindness colorblindnessInstance;
 
     void Start() {
+        base.Start();
         colorblindnessInstance = Colorblindness.Instance;
 
         if (colorblindnessInstance == null) {
@@ -17,12 +36,13 @@ public class ColorblindUI : MenuActivation
         }
 
         // Ensure we start on default mode/no colorblind filter
-        colorblindnessInstance.Change(0);
+        SetColorblindMode(0);
 
         gameObject.SetActive(false);
     }
 
-    void OnEnable() {
+    protected override void OnEnable() {
+        base.OnEnable();
         EventSystem.current.SetSelectedGameObject(selectFirst);
     }
 

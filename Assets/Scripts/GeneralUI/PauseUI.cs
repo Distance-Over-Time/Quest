@@ -5,7 +5,8 @@ using UnityEngine.EventSystems;
 
 public class PauseUI : MenuActivation
 {
-    void OnEnable() {
+    protected override void OnEnable() {
+        base.OnEnable();
         EventSystem.current.SetSelectedGameObject(selectFirst);
     }
 
