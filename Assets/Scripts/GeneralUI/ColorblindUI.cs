@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 using SOHNE.Accessibility.Colorblindness;
 
 /* 
@@ -43,7 +44,7 @@ public class ColorblindUI : MenuActivation {
 
     protected override void OnEnable() {
         base.OnEnable();
-        EventSystem.current.SetSelectedGameObject(selectFirst);
+        selectFirst.Select();
     }
 
     public void SetColorblindMode(int modeIndex) {

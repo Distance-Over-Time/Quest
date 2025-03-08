@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using FMOD.Studio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,22 +11,17 @@ public class PlayerController : MonoBehaviour
     public float groundDist;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
-    //audio
-    private EventInstance playerFootsteps;
-
     public void OnMove(InputAction.CallbackContext context) {
         move = context.ReadValue<Vector2>();
     }
 
-    private void Start() {
-        playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootsteps);
-    }
-    
-    void Update() {
+    void Update()
+    {
         MovePlayer();
     }
 
-    public void MovePlayer() {       
+    public void MovePlayer()
+    {        
         // Snap player to ground
         RaycastHit hit;
         Vector3 castPos = transform.position;
@@ -42,28 +36,10 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(move.x, 0f, move.y);
         transform.Translate(movement * speed * Time.deltaTime, Space.World);
-
-        // Audio
-        PLAYBACK_STATE playbackState;
-        playerFootsteps.getPlaybackState(out playbackState);
-
-        if (movement.Equals(Vector3.zero)) {
-
-            if (playbackState.Equals(PLAYBACK_STATE.PLAYING))
-            {
-                playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
-            }
-        }
-        else {
-            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
-            {
-                playerFootsteps.start();
-            }
-        }
         FlipSprite();
     }
 
-    // TODO: Currently snaps back to facing left -- fix
+    // Currently snaps back to facing left
     public void FlipSprite() {
         if (move.x > 0) {
             spriteRenderer.flipX = true;

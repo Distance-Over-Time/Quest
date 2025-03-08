@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class MenuActivation : MonoBehaviour {
     private bool isOn;
     [SerializeField] private PlayerInput playerControls;
-    [SerializeField] protected GameObject selectFirst;
+    [SerializeField] protected Selectable selectFirst;
+
     private InputManager inputManager;
     private InputActionMap pauseUIMap;
 
@@ -75,7 +77,8 @@ public class MenuActivation : MonoBehaviour {
 
     protected IEnumerator SetFirstButton() {
         yield return null;
-        EventSystem.current.SetSelectedGameObject(selectFirst);
+        // EventSystem.current.SetSelectedGameObject(selectFirst);
+        selectFirst.Select();
     }
 
     public void GoToMenu(GameObject targetMenu) {
