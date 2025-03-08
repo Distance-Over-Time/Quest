@@ -28,7 +28,7 @@ using SOHNE.Accessibility.Colorblindness;
 public class ColorblindUI : MenuActivation {
     private Colorblindness colorblindnessInstance;
 
-    void Start() {
+    protected override void Start() {
         base.Start();
         colorblindnessInstance = Colorblindness.Instance;
 
@@ -45,6 +45,7 @@ public class ColorblindUI : MenuActivation {
     protected override void OnEnable() {
         base.OnEnable();
         selectFirst.Select();
+        pauseUIMap.FindAction("Activate")?.Disable();
     }
 
     public void SetColorblindMode(int modeIndex) {

@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class CraftingUI : MenuActivation {
     private InputActionMap craftUIMap;
 
-    void Awake() {
+    protected override void Awake() {
         base.Awake();
         craftUIMap = GetInputManager().Crafting;
     }
