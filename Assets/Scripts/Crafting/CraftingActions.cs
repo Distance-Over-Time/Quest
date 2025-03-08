@@ -13,7 +13,7 @@ public class CraftingActions : YarnStorageConnection
     [SerializeField] private int potFillCount = 0;
     [SerializeField] private GameObject potRow;
     [SerializeField] private CraftingSolutions solutions;
-    [SerializeField] private MenuActivation menuStatus;
+    [SerializeField] private CraftingMenu menuStatus;
     [SerializeField] private GameObject[] materialObjs;
     [SerializeField] private GameObject craftedPopup;
 
@@ -106,9 +106,6 @@ public class CraftingActions : YarnStorageConnection
     private void CraftingSuccess(string recipeName) {
         GameObject craftedRecipe = GameObject.Find(recipeName);
         craftedRecipe.transform.GetChild(1).GetComponent<KeyItemReaction>().SetCraftedStatus(true);
-
-        // Update Yarn variable for talking to NPCs
-        ChangeDiscoveredBool(craftedRecipe.GetComponent<KeyItemValue>().GetYarnCraftingVariable());
 
         craftedPopup.GetComponent<ItemAcquiredActions>().PlayPopupAnim(craftedRecipe);
 
