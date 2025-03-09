@@ -6,7 +6,7 @@ tags:
     <<set $elvesFirstChat to false>>
 
         Oak: <sub>A customer.</sub>
-        Ash: <sub>CUSTOMER.</sub>
+        Ash: <sub>A CUSTOMER.</sub>
         <i>The two woodsprites offer deep, identical bows in perfect unison.</i>
         Oak: Welcome paying patron to our humble establishment~
         Oak: We invite you to peruse our menu of spirits, nightcaps, and libations, all made by fairy hands... 
@@ -14,7 +14,7 @@ tags:
         Oak: Perhaps a thimble of morning dew?
         Ash: JUICY, DELICIOUS BLACKBERRY CORDIAL?
         Oak: Flax into Gold perhaps or an elfshot of--
-        Ash: HONEYWINE!
+        Ash: <b>HONEYWINE.</b>
         Oak: Ash, my good fellow, we are out of honeywine.
         Ash: THE BEES.
         Oak: Yes, they do not slumber yet. We must pay the great dragon a visit.
@@ -30,14 +30,14 @@ tags:
             <<if $craftedKeyItem0 is false>>
                 -> I don't suppose you have chamomile tea?
                 Ash: NO.
-                Ash: WE TRY AND WE TRY.
-                Ash: THE TEA IS TOO STRONG.
+                Ash: WE TRY AND TRY.
+                Ash: TEA IS TOO STRONG.
                 Oak: Much too strong. You may slumber for a hundred years after a single sip.
                 //checking to see if player has already found chamomile
                 <<if $foundMatItem1 is false>>  
                 Oak: But if it is chamomile you seek, the trees speak of a meadow overlooking the sea...
                 <<else>>
-                Oak: It is better brewed with hands untouched by fey magic.
+                Oak: It is better brewed with hands unburdened by fey magic.
                 <<endif>>
                 Oak: Was there anything else we could satisfy you with in the meantime?
                     <<if $pirateFirstChat is true>>
