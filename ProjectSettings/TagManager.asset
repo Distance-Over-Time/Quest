@@ -14,8 +14,8 @@ TagManager:
   - Terrain
   - NPC
   - Boundary
-  - 
-  - 
+  - Floor
+  - Player
   - 
   - 
   - 
