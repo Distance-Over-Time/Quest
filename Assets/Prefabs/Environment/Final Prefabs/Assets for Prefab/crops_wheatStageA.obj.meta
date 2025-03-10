@@ -3,7 +3,13 @@ guid: eb2516e5b2d8bef4982b1a6569141517
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: crops_wheatStageAMat
+    second: {fileID: -8067726398312463513, guid: 5b52c754e056fdf43ae25bc5f5edc39b,
+      type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
